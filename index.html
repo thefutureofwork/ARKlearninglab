@@ -4,64 +4,89 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Liberland Academy | Free to choose. Bound to care.</title>
-<meta name="description" content="K-12 learning rooted in Liberland. One shared core, three routes: Liberland Academy, UnSchool and LIBERVERSE Learning Lab.">
+<meta name="description" content="K-12 learning rooted in Liberland. One shared core, three routes: Liberland Academy, UnSchool and LIBERVERSE Learning Lab. Science & Civics Pack, practical skills and the ARK Learning Lab.">
+<meta property="og:title" content="Liberland Academy">
+<meta property="og:description" content="Free to choose. Bound to care. K-12 learning rooted in Liberland.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@0,500;0,700;1,600&family=Hind:wght@400;500&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@0,500;0,700;1,600&family=Hind:wght@400;500&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
 <style>
-:root{--sun:oklch(0.86 0.165 92);--ink:oklch(0.2 0.02 95);--paper:oklch(0.985 0.012 95);--river:oklch(0.47 0.1 140);--wash:oklch(0.94 0.035 140);--onink:oklch(0.95 0.03 92);--rule:oklch(0.88 0.015 95);--display:"Familjen Grotesk",system-ui,sans-serif;--sans:"Hind",system-ui,sans-serif;--mono:"IBM Plex Mono",ui-monospace,monospace}
+:root{--sun:oklch(0.86 0.165 92);--sun-ink:oklch(0.2 0.03 92);--ink:oklch(0.2 0.02 95);--paper:oklch(0.985 0.012 95);--river:oklch(0.47 0.1 140);--wash:oklch(0.94 0.035 140);--onink:oklch(0.95 0.03 92);--rule:oklch(0.88 0.015 95);--display:"Familjen Grotesk",system-ui,sans-serif;--sans:"Hind",system-ui,sans-serif;--mono:"IBM Plex Mono",ui-monospace,monospace;--ease:cubic-bezier(.34,1.3,.5,1)}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{background:var(--paper);color:var(--ink);font:400 17px/1.55 var(--sans)}
 a{color:inherit}
+svg.i{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .wrap{max-width:1152px;margin:0 auto;padding:0 24px}
 .eyebrow{font:500 14px/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--river)}
 h1,h2,h3{font-family:var(--display);font-weight:700;letter-spacing:-.02em;line-height:1.08}
 h2{font-size:clamp(36px,5vw,52px);margin-top:12px;max-width:820px}
 h3{font-size:28px}
 section{padding:96px 0}
-.btn{display:inline-block;padding:13px 22px;border-radius:4px;font:500 16px var(--sans);text-decoration:none;border:2px solid var(--ink);cursor:pointer}
+.sub{margin-top:16px;max-width:640px;font-size:18px;opacity:.82;line-height:1.4}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 22px;border-radius:4px;font:500 16px var(--sans);text-decoration:none;border:2px solid var(--ink);cursor:pointer}
 .btn-ink{background:var(--ink);color:var(--onink)}
-.btn-line{background:transparent;color:var(--ink)}
-.btn-sun{background:var(--sun);color:var(--ink);border-color:var(--sun);width:100%;margin-top:32px}
+.btn-line{background:transparent;color:var(--ink)}.btn-line:hover{background:oklch(0.2 0.03 92 / .1)}
+.btn-sun{background:var(--sun);color:var(--sun-ink);border-color:var(--sun);width:100%;margin-top:32px}
+.mono-lbl{font:500 14px var(--mono);letter-spacing:.1em;text-transform:uppercase}
 /* hero */
-header{background:var(--sun);overflow:hidden;position:relative}
-nav{display:flex;justify-content:space-between;align-items:center;padding-top:24px}
+header{background:var(--sun);color:var(--sun-ink);overflow:hidden;position:relative}
+nav{display:flex;justify-content:space-between;align-items:center;padding-top:24px;position:relative;z-index:1}
 nav .brand{font:700 19px var(--display)}
-nav .links{display:flex;gap:24px;font-size:15px}
+nav .links{display:flex;gap:24px;font-size:15px;font-weight:500}
 nav .links a{text-decoration:none}nav .links a:hover{text-decoration:underline}
-.hero{padding:96px 24px 32px}
+.hero{padding:96px 24px 32px;position:relative;z-index:1}
 .hero .eyebrow{color:oklch(0.2 0.03 92 / .7)}
 .hero h1{font-size:clamp(60px,10.5vw,132px);line-height:.95;letter-spacing:-.045em;margin-top:16px}
 .hero p.lead{font-size:21px;max-width:560px;margin-top:32px;line-height:1.4}
 .hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
 .river{display:block;width:100%;height:clamp(140px,18vw,256px);margin-bottom:-8px}
+.scroll{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);color:var(--sun);z-index:1}
 @keyframes flow{to{stroke-dashoffset:-280}}
 .cur{animation:flow 9s linear infinite}.cur-slow{animation:flow 16s linear infinite}
 @keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-.rise{animation:rise .9s cubic-bezier(.34,1.3,.5,1) both}
-@media (prefers-reduced-motion:reduce){.cur,.cur-slow,.rise{animation:none}}
+.rise{animation:rise .9s var(--ease) both}
+@keyframes bob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,5px)}}
+.bob{animation:bob 3.2s ease-in-out infinite}
 /* pathways */
 .paths{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--ink);border:2px solid var(--ink);border-radius:6px;overflow:hidden;margin-top:48px}
 .paths article{background:var(--paper);padding:32px;display:flex;flex-direction:column;gap:16px}
-.paths article:first-child{background:var(--sun)}
+.paths article:first-child{background:var(--sun);color:var(--sun-ink)}
 .paths .tag{font:500 14px var(--mono);letter-spacing:.14em;text-transform:uppercase;opacity:.7}
 .paths .line{font-size:20px;line-height:1.35}
 .paths .detail{margin-top:auto;font-size:16px;opacity:.78}
-/* journey */
-#journey{background:var(--wash)}
+/* toggles */
 .jhead{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
 .tabs{display:inline-flex;background:oklch(0.88 0.04 140);border-radius:6px;padding:3px}
 .tabs button{border:0;background:transparent;font:500 15px var(--sans);padding:8px 14px;border-radius:4px;cursor:pointer;color:var(--ink)}
 .tabs button[aria-selected=true]{background:var(--paper);box-shadow:0 1px 2px oklch(0 0 0 / .12)}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opts button{height:44px;padding:0 16px;font:400 16px var(--sans);background:var(--paper);border:1px solid oklch(0.2 0.02 95 / .22);border-radius:4px;cursor:pointer;color:var(--ink)}
+.opts button:hover{background:oklch(0.95 0.02 95)}
+.opts button[aria-pressed=true]{background:var(--sun);color:var(--sun-ink);border-color:oklch(0.75 0.15 92)}
+button:focus-visible,a:focus-visible{outline:3px solid var(--river);outline-offset:2px}
+/* journey */
+#journey{background:var(--wash)}
 ol.weeks{list-style:none;margin-top:64px;padding-left:56px;position:relative;display:grid;gap:40px}
 ol.weeks::before{content:"";position:absolute;left:19px;top:8px;bottom:8px;width:6px;border-radius:6px;background:var(--river)}
 ol.weeks li{position:relative;display:grid;grid-template-columns:20rem 1fr;gap:32px}
-ol.weeks .n{position:absolute;left:-56px;top:0;width:44px;height:44px;border-radius:50%;border:4px solid var(--river);background:var(--paper);display:grid;place-items:center;font:500 16px var(--mono);color:var(--river)}
+ol.weeks .n{position:absolute;left:-56px;top:0;width:44px;height:44px;border-radius:50%;border:4px solid var(--river);background:var(--paper);display:grid;place-items:center;font:600 16px var(--mono);color:var(--river)}
 ol.weeks h3{font-size:24px;padding-top:6px}
 ol.weeks p{padding-top:8px;font-size:18px;opacity:.85}
 ol.weeks p b{font:500 13px var(--mono);letter-spacing:.14em;color:var(--river);margin-right:6px}
 .jnote{margin-top:56px;font-size:18px;max-width:640px}
+/* skills */
+.sk-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:48px}
+.sk{border:2px solid var(--ink);border-radius:6px;background:var(--paper);padding:24px;display:flex;flex-direction:column;gap:12px;transition:transform .42s var(--ease),box-shadow .42s}
+.sk:hover{transform:translateY(-4px) rotate(-.6deg);box-shadow:6px 6px 0 var(--sun)}
+.sk .ic{width:48px;height:48px;border-radius:50%;background:var(--sun);color:var(--sun-ink);display:grid;place-items:center}
+.sk h3{font-size:20px}
+.sk .task{font-size:18px;line-height:1.3}
+.sk .dom{margin-top:auto;padding-top:8px;font:500 13px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--river)}
+.safety{margin-top:40px;display:grid;grid-template-columns:auto 1fr;gap:24px;background:var(--wash);border-radius:6px;padding:32px;align-items:start}
+.safety svg{color:var(--river)}
+.safety .big{font:700 24px/1.2 var(--display)}
+.safety p+p{margin-top:8px;font-size:16px;opacity:.8}
 /* streams */
 .streams{background:var(--ink);color:var(--onink)}
 .streams .eyebrow{color:var(--sun)}
@@ -70,55 +95,76 @@ ol.weeks p b{font:500 13px var(--mono);letter-spacing:.14em;color:var(--river);m
 .sgrid h3{color:var(--sun)}
 .sgrid p{font-size:18px;margin-top:12px}
 ul.ticks{list-style:none;margin-top:16px;display:grid;gap:8px;font-size:16px}
-ul.ticks li::before{content:"\2713";color:var(--river);margin-right:10px;font-weight:700}
-.sgrid ul.ticks li::before{color:var(--sun)}
+ul.ticks li{display:flex;align-items:flex-start;gap:8px}
+ul.ticks svg{flex-shrink:0;margin-top:4px;color:var(--river)}
+.sgrid ul.ticks{opacity:.85}.sgrid ul.ticks svg,.lead ul.ticks svg{color:var(--sun)}
 .snote{margin-top:48px;opacity:.8}
 /* pack */
 .pack{display:grid;grid-template-columns:1fr 22rem;gap:48px}
-.units{display:grid;grid-template-columns:1fr 1fr;column-gap:32px;margin-top:40px}
-.units div{display:flex;justify-content:space-between;align-items:baseline;gap:16px;border-bottom:2px solid var(--rule);padding:16px 0}
-.units b{font:700 20px var(--display)}
-.units span{font-size:14px;opacity:.72;text-align:right}
-.stories{background:var(--sun);border-radius:6px;padding:32px}
-.stories h3{font-size:24px}
+.units{display:grid;grid-template-columns:1fr 1fr;column-gap:32px;margin-top:32px}
+.unit{display:grid;grid-template-columns:2rem 1fr;column-gap:12px;border-bottom:2px solid var(--rule);padding:16px 0}
+.unit .no{font:500 14px var(--mono);color:var(--river);padding-top:4px}
+.unit .subj{font:500 13px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--river)}
+.unit h3{font-size:20px;margin-top:4px}
+.unit p.d{font-size:16px;opacity:.75;margin-top:4px;line-height:1.35}
+.stories{background:var(--sun);color:var(--sun-ink);border-radius:6px;padding:32px;align-self:start}
+.stories h3{font-size:24px;margin-top:16px}
+.stories>p{font-size:16px;opacity:.8;margin-top:4px}
 .stories ul{list-style:none;margin-top:24px;display:grid;gap:12px}
-.stories li{font:italic 600 18px var(--display)}
+.stories li{border-top:1px solid oklch(0.2 0.03 92 / .2);padding-top:12px}
+.stories .t{font:italic 600 18px var(--display)}
+.stories .s{font-size:15px;opacity:.85;margin-top:4px;line-height:1.35}
+.stories .u{font:500 13px var(--mono);letter-spacing:.08em;text-transform:uppercase;opacity:.7;margin-top:4px}
 /* offers */
 #offers{background:var(--wash)}
-.offers{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:48px}
-.offers article{background:var(--paper);border:2px solid oklch(0.2 0.02 95 / .2);border-radius:6px;padding:24px;display:flex;flex-direction:column}
+.keys{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.keys div{background:var(--paper);border:2px solid oklch(0.2 0.02 95 / .2);border-radius:6px;padding:24px}
+.keys .term{font:700 24px var(--display);margin-top:4px}
+.keys p:last-child{font-size:16px;opacity:.8;margin-top:8px}
+.offers{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(12,auto);gap:0 16px;margin-top:48px}
+.offers article{display:grid;grid-template-rows:subgrid;grid-row:span 12;background:var(--paper);border:2px solid oklch(0.2 0.02 95 / .2);border-radius:6px;padding:24px}
 .offers article.lead{background:var(--ink);color:var(--paper);border-color:var(--ink)}
-.offers article.lead ul.ticks li::before{color:var(--sun)}
 .offers h3{font-size:24px}
-.offers .who{font-size:16px;opacity:.75}
-.offers .price{font:700 48px var(--display);letter-spacing:-.03em;margin-top:24px}
-.offers .unit{font:500 13px var(--mono);letter-spacing:.1em;text-transform:uppercase;opacity:.75}
-.offers .note{margin-top:auto;padding-top:24px;font-size:14px;opacity:.7}
+.offers .price{font:700 48px var(--display);letter-spacing:-.03em;margin-top:16px}
+.offers .unitlbl{font:500 13px var(--mono);letter-spacing:.1em;text-transform:uppercase;opacity:.75}
+.offers .note{font-size:14px;opacity:.75}
+.offers .row{border-top:2px solid var(--rule);padding:12px 0}
+.offers .lead .row{border-color:oklch(0.985 0.012 95 / .2)}
+.offers .row .k{font:500 13px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--river)}
+.offers .lead .row .k{color:var(--sun)}
+.offers .row p.v{font-size:16px;margin-top:4px;line-height:1.35}
+.offers .row.not p.v{opacity:.7}
+.offers .row ul.ticks{margin-top:4px;gap:4px}
+.addons{margin-top:40px;display:grid;grid-template-columns:14rem 1fr;gap:24px;background:var(--paper);border-radius:6px;padding:32px}
+.addons .big{font:700 24px var(--display)}
+.addons .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.addons b{font:700 18px var(--display);display:block}
+.addons span,.addons .muted{font-size:16px;opacity:.8}
 .fine{margin-top:24px;font-size:14px;opacity:.72}
 /* plan */
 .plan{display:grid;grid-template-columns:1fr 24rem;gap:40px;margin-top:48px}
 .choice{margin-bottom:32px}
 .choice .eyebrow{margin-bottom:12px}
-.opts{display:flex;flex-wrap:wrap;gap:8px}
-.opts button{height:44px;padding:0 16px;font:400 16px var(--sans);background:var(--paper);border:1px solid oklch(0.2 0.02 95 / .22);border-radius:4px;cursor:pointer;color:var(--ink)}
-.opts button[aria-pressed=true]{background:var(--sun);border-color:oklch(0.75 0.15 92)}
 .yours{background:var(--ink);color:var(--paper);border-radius:6px;padding:32px;align-self:start}
 .yours .eyebrow{color:var(--sun)}
 .yours .sum{font:700 30px/1.15 var(--display);margin-top:16px}
 .yours .off{font:700 24px var(--display);color:var(--sun);margin-top:4px}
 /* footer */
-footer{background:var(--sun);padding:64px 0}
+footer{background:var(--sun);color:var(--sun-ink);padding:64px 0}
 footer .wrap{display:grid;grid-template-columns:1fr 28rem;gap:32px}
 footer .big{font:700 40px var(--display);letter-spacing:-.02em}
 footer small{font-size:14px;line-height:1.6;opacity:.82}
-@media (max-width:900px){nav .links{display:none}.paths,.sgrid,.pack,.units,.plan,footer .wrap{grid-template-columns:1fr}.offers{grid-template-columns:1fr 1fr}ol.weeks li{grid-template-columns:1fr;gap:4px}}
-@media (max-width:560px){.offers{grid-template-columns:1fr}.hero{padding-top:64px}}
+@media (prefers-reduced-motion:reduce){.cur,.cur-slow,.rise,.bob{animation:none}.sk,.sk:hover{transition:none;transform:none}}
+@media (max-width:1100px){.sk-grid{grid-template-columns:repeat(3,1fr)}.offers{grid-template-columns:1fr 1fr}.offers article{grid-row:auto;display:block}.offers{grid-template-rows:none;gap:16px}}
+@media (max-width:900px){nav .links{display:none}.paths,.sgrid,.pack,.units,.plan,.keys,.addons,.addons .grid,footer .wrap{grid-template-columns:1fr}.sk-grid{grid-template-columns:1fr 1fr}ol.weeks li{grid-template-columns:1fr;gap:4px}}
+@media (max-width:560px){.offers,.sk-grid{grid-template-columns:1fr}.hero{padding-top:64px}.safety{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.106-3.105c.32-.322.863-.22.983.218a6 6 0 0 1-8.259 7.057l-7.91 7.91a1 1 0 0 1-2.999-3l7.91-7.91a6 6 0 0 1 7.057-8.259c.438.12.54.662.219.984z"></path></symbol><symbol id="i-sprout" viewBox="0 0 24 24"><path d="M14 9.536V7a4 4 0 0 1 4-4h1.5a.5.5 0 0 1 .5.5V5a4 4 0 0 1-4 4 4 4 0 0 0-4 4c0 2 1 3 1 5a5 5 0 0 1-1 3"></path><path d="M4 9a5 5 0 0 1 8 4 5 5 0 0 1-8-4"></path><path d="M5 21h14"></path></symbol><symbol id="i-cookingpot" viewBox="0 0 24 24"><path d="M2 12h20"></path><path d="M20 12v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8"></path><path d="m4 8 16-4"></path><path d="m8.86 6.78-.45-1.81a2 2 0 0 1 1.45-2.43l1.94-.48a2 2 0 0 1 2.43 1.46l.45 1.8"></path></symbol><symbol id="i-droplets" viewBox="0 0 24 24"><path d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.260-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z"></path><path d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97"></path></symbol><symbol id="i-heartpulse" viewBox="0 0 24 24"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"></path><path d="M3.22 13H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"></path></symbol><symbol id="i-zap" viewBox="0 0 24 24"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"></path></symbol><symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="m16.24 7.76-1.804 5.411a2 2 0 0 1-1.265 1.265L7.76 16.24l1.804-5.411a2 2 0 0 1 1.265-1.265z"></path></symbol><symbol id="i-radio" viewBox="0 0 24 24"><path d="M16.247 7.761a6 6 0 0 1 0 8.478"></path><path d="M19.075 4.933a10 10 0 0 1 0 14.134"></path><path d="M4.925 19.067a10 10 0 0 1 0-14.134"></path><path d="M7.753 16.239a6 6 0 0 1 0-8.478"></path><circle cx="12" cy="12" r="2"></circle></symbol><symbol id="i-coins" viewBox="0 0 24 24"><path d="M13.744 17.736a6 6 0 1 1-7.48-7.48"></path><path d="M15 6h1v4"></path><path d="m6.134 14.768.866-.5 2 3.464"></path><circle cx="16" cy="8" r="6"></circle></symbol><symbol id="i-hammer" viewBox="0 0 24 24"><path d="m15 12-9.373 9.373a1 1 0 0 1-3.001-3L12 9"></path><path d="m18 15 4-4"></path><path d="m21.5 11.5-1.914-1.914A2 2 0 0 1 19 8.172v-.344a2 2 0 0 0-.586-1.414l-1.657-1.657A6 6 0 0 0 12.516 3H9l1.243 1.243A6 6 0 0 1 12 8.485V10l2 2h1.172a2 2 0 0 1 1.414.586L18.5 14.5"></path></symbol><symbol id="i-shieldcheck" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.810 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></symbol><symbol id="i-headphones" viewBox="0 0 24 24"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"></path></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"></path></symbol><symbol id="i-arrowdown" viewBox="0 0 24 24"><path d="M12 5v14"></path><path d="m19 12-7 7-7-7"></path></symbol></defs></svg>
 <header>
   <nav class="wrap"><span class="brand">Liberland Academy</span>
-    <div class="links"><a href="#pathways">Pathways</a><a href="#journey">ARK Learning Lab</a><a href="#pack">Science &amp; Civics Pack</a><a href="#plan">Build a plan</a></div>
+    <div class="links"><a href="#pathways">Pathways</a><a href="#journey">ARK Learning Lab</a><a href="#skills">Practical skills</a><a href="#pack">Science &amp; Civics Pack</a><a href="#offers">Packages</a><a href="#plan">Build a plan</a></div>
   </nav>
   <div class="wrap hero">
     <p class="eyebrow rise">45.77&deg; N &middot; 18.88&deg; E &middot; on the Danube</p>
@@ -133,6 +179,7 @@ footer small{font-size:14px;line-height:1.6;opacity:.82}
     <use href="#r" class="cur-slow" fill="none" stroke="oklch(0.86 0.165 92)" stroke-width="1.5" stroke-dasharray="1 40" stroke-linecap="round" opacity=".6" transform="translate(0 12)"/>
     <use href="#r" class="cur-slow" fill="none" stroke="oklch(0.86 0.165 92)" stroke-width="1.5" stroke-dasharray="1 34" stroke-linecap="round" opacity=".5" transform="translate(0 -12)"/>
   </svg>
+  <a href="#pathways" class="scroll bob" aria-label="Scroll to pathways"><svg class="i" width="22" height="22" aria-hidden="true"><use href="#i-arrowdown"/></svg></a>
 </header>
 
 <section id="pathways"><div class="wrap">
@@ -148,53 +195,94 @@ footer small{font-size:14px;line-height:1.6;opacity:.82}
 <section id="journey"><div class="wrap">
   <div class="jhead">
     <div><p class="eyebrow">ARK Learning Lab &middot; six-week pilot</p><h2>How can we help ARK care for its water, living things and resources?</h2></div>
-    <div class="tabs" role="tablist"><button role="tab" aria-selected="true" data-band="p">Ages 6&ndash;11</button><button role="tab" aria-selected="false" data-band="s">Ages 12&ndash;16</button></div>
+    <div class="tabs" role="tablist" aria-label="Age band"><button type="button" role="tab" aria-selected="true" data-band="primary">Ages 6&ndash;11</button><button type="button" role="tab" aria-selected="false" data-band="secondary">Ages 12&ndash;16</button></div>
   </div>
-  <ol class="weeks" id="weeks"></ol>
+  <ol class="weeks" id="weeks">
+    <li><span class="n">1</span><h3>Read the place</h3><p class="ev" data-primary="Annotated map and one learner question" data-secondary="System map, investigable question, baseline plan"><b>EVIDENCE</b><span>Annotated map and one learner question</span></p></li>
+    <li><span class="n">2</span><h3>Water: observe and measure</h3><p class="ev" data-primary="Water observation sheet and picture graph" data-secondary="Sampling plan, measurements, limitations note"><b>EVIDENCE</b><span>Water observation sheet and picture graph</span></p></li>
+    <li><span class="n">3</span><h3>Who lives here?</h3><p class="ev" data-primary="Habitat sketch and species tally" data-secondary="Repeatable survey, dataset, interpretation"><b>EVIDENCE</b><span>Habitat sketch and species tally</span></p></li>
+    <li><span class="n">4</span><h3>Food and circular resources</h3><p class="ev" data-primary="Resource journey storyboard and sorting tally" data-secondary="Resource audit and a quantified opportunity"><b>EVIDENCE</b><span>Resource journey storyboard and sorting tally</span></p></li>
+    <li><span class="n">5</span><h3>Design a small improvement</h3><p class="ev" data-primary="Tested model or sign prototype" data-secondary="Criteria-led prototype and feedback record"><b>EVIDENCE</b><span>Tested model or sign prototype</span></p></li>
+    <li><span class="n">6</span><h3>Share, decide, reflect</h3><p class="ev" data-primary="Team showcase and one thing I learned" data-secondary="Evidence-backed pitch to the ARK forum"><b>EVIDENCE</b><span>Team showcase and one thing I learned</span></p></li>
+  </ol>
   <p class="jnote">One 90-minute session a week, plus an optional project block. Learners pick the question; adults keep it safe.</p>
+</div></section>
+
+<section id="skills"><div class="wrap">
+  <div class="jhead">
+    <div><p class="eyebrow">Practical independence skills</p><h2>Hands that can fix, grow, cook and plan.</h2><p class="sub">Ten skill families, each a card a learner can pick up. Every card links to the core curriculum.</p></div>
+    <div class="opts" id="skband" role="group" aria-label="Age band"><button type="button" data-v="6-8" aria-pressed="false">Ages 6–8</button><button type="button" data-v="9-11" aria-pressed="true">Ages 9–11</button><button type="button" data-v="12-14" aria-pressed="false">Ages 12–14</button><button type="button" data-v="15-18" aria-pressed="false">Ages 15–18</button></div>
+  </div>
+  <div class="sk-grid">
+    <article class="sk"><span class="ic"><svg class="i" width="22" height="22" aria-hidden="true"><use href="#i-wrench"/></svg></span><h3>Repair &amp; mend</h3><p class="task" data-6-8="Sew a button back on" data-9-11="Patch a bike inner tube" data-12-14="Diagnose a wobbly chair joint" data-15-18="Log, cost and fix a household fault">Patch a bike inner tube</p><p class="dom">Design + materials</p></article>
+    <article class="sk"><span class="ic"><svg class="i" width="22" height="22" aria-hidden="true"><use href="#i-sprout"/></svg></span><h3>Grow food</h3><p class="task" data-6-8="Start a seedling and draw it weekly" data-9-11="Compare two soils in a fair test" data-12-14="Plan a raised bed by yield" data-15-18="Run a season trial with data">Compare two soils in a fair test</p><p class="dom">Life science + measurement</p></article>
+    <article class="sk"><span class="ic"><svg class="i" width="22" height="22" aria-hidden="true"><use href="#i-cookingpot"/></svg></span><h3>Cook &amp; store</h3><p class="task" data-6-8="Make a no-heat snack safely" data-9-11="Plan a low-cost family meal" data-12-14="Cook with a food-safety checklist" data-15-18="Budget a week of meals for four">Plan a low-cost family meal</p><p class="dom">Health + chemistry</p></article>
+    <article class="sk"><span class="ic"><svg class="i" width="22" height="22" aria-hidden="true"><use href="#i-droplets"/></svg></span><h3>Water sense</h3><p class="task" data-6-8="Track where water goes at home" data-9-11="Measure a tap’s daily use" data-12-14="Model a rain-catch system" data-15-18="Audit and cut a site’s water use">Measure a tap’s daily use</p><p class="dom">Earth science + data</p></article>
+    <article class="sk"><span class="ic"><svg class="i" width="22" height="22" aria-hidden="true"><use href="#i-heartpulse"/></svg></span><h3>First-aid aware</h3><p class="task" data-6-8="Know when and how to call for help" data-9-11="Stock and explain a kit" data-12-14="Practise with a qualified instructor" data-15-18="Take a recognised first-aid course">Stock and explain a kit</p><p class="dom">Health + communication</p></article>
+    <article class="sk"><span class="ic"><svg class="i" width="22" height="22" aria-hidden="true"><use href="#i-zap"/></svg></span><h3>Energy at home</h3><p class="task" data-6-8="Spot what uses power" data-9-11="Read a meter for a week" data-12-14="Build a safe solar-oven model" data-15-18="Cost an efficiency upgrade">Read a meter for a week</p><p class="dom">Physics + economics</p></article>
+    <article class="sk"><span class="ic"><svg class="i" width="22" height="22" aria-hidden="true"><use href="#i-compass"/></svg></span><h3>Find your way</h3><p class="task" data-6-8="Draw a map of the route home" data-9-11="Use a compass on a set course" data-12-14="Plan a walk with a paper map" data-15-18="Lead a navigated route, supervised">Use a compass on a set course</p><p class="dom">Geography + maths</p></article>
+    <article class="sk"><span class="ic"><svg class="i" width="22" height="22" aria-hidden="true"><use href="#i-radio"/></svg></span><h3>Be ready</h3><p class="task" data-6-8="Learn the family meeting point" data-9-11="Build a household contact card" data-12-14="Draft a household emergency plan" data-15-18="Run a drill and improve the plan">Build a household contact card</p><p class="dom">Civics + responsibility</p></article>
+    <article class="sk"><span class="ic"><svg class="i" width="22" height="22" aria-hidden="true"><use href="#i-coins"/></svg></span><h3>Money &amp; trade</h3><p class="task" data-6-8="Save toward one goal" data-9-11="Compare prices per unit" data-12-14="Run a tiny stall and keep books" data-15-18="Write a simple business budget">Compare prices per unit</p><p class="dom">Economics + maths</p></article>
+    <article class="sk"><span class="ic"><svg class="i" width="22" height="22" aria-hidden="true"><use href="#i-hammer"/></svg></span><h3>Tool literacy</h3><p class="task" data-6-8="Name and carry tools safely" data-9-11="Measure, mark and cut card" data-12-14="Build a small item with hand tools" data-15-18="Teach a low-risk skill to others">Measure, mark and cut card</p><p class="dom">Engineering + safety</p></article>
+  </div>
+  <div class="safety"><svg class="i" width="32" height="32" aria-hidden="true"><use href="#i-shieldcheck"/></svg><div><p class="big">Every card: outcome, materials, adult notes, a choice, and proof.</p><p>Print it, learn it online, or practise it at ARK. First aid, food safety, fire and power tools are taught by qualified people. No folk cures, no unsafe shortcuts.</p></div></div>
 </div></section>
 
 <section class="streams"><div class="wrap">
   <p class="eyebrow">Three ways to deliver it</p>
   <h2>Change the setting, never the standard.</h2>
   <div class="sgrid">
-    <article><h3>Un-screen pack</h3><p>Print it. Run it at the kitchen table. No device needed.</p><ul class="ticks"><li>Lesson cards</li><li>Field journal</li><li>Data sheets</li><li>Offline portfolio</li></ul></article>
-    <article><h3>Online course</h3><p>Weekly modules, low-bandwidth, private submissions.</p><ul class="ticks"><li>90-min modules</li><li>Prepared datasets</li><li>Mentor feedback</li><li>Paper, audio or typed evidence</li></ul></article>
-    <article><h3>ARK on-site</h3><p>Field days on the Danube at ARK Village, Apatin.</p><ul class="ticks"><li>Facilitated cohorts</li><li>Supervised fieldwork</li><li>Indoor weather plan</li><li>Final ARK forum</li></ul></article>
+    <article><h3>Un-screen pack</h3><p>Print it. Run it at the kitchen table. No device needed.</p><ul class="ticks"><li><svg class="i" width="16" height="16" aria-hidden="true"><use href="#i-check"/></svg><span>Lesson cards</span></li><li><svg class="i" width="16" height="16" aria-hidden="true"><use href="#i-check"/></svg><span>Field journal</span></li><li><svg class="i" width="16" height="16" aria-hidden="true"><use href="#i-check"/></svg><span>Data sheets</span></li><li><svg class="i" width="16" height="16" aria-hidden="true"><use href="#i-check"/></svg><span>Offline portfolio</span></li></ul></article>
+    <article><h3>Online course</h3><p>Weekly modules, low-bandwidth, private submissions.</p><ul class="ticks"><li><svg class="i" width="16" height="16" aria-hidden="true"><use href="#i-check"/></svg><span>90-min modules</span></li><li><svg class="i" width="16" height="16" aria-hidden="true"><use href="#i-check"/></svg><span>Prepared datasets</span></li><li><svg class="i" width="16" height="16" aria-hidden="true"><use href="#i-check"/></svg><span>Mentor feedback</span></li><li><svg class="i" width="16" height="16" aria-hidden="true"><use href="#i-check"/></svg><span>Paper, audio or typed evidence</span></li></ul></article>
+    <article><h3>ARK on-site</h3><p>Field days on the Danube at ARK Village, Apatin.</p><ul class="ticks"><li><svg class="i" width="16" height="16" aria-hidden="true"><use href="#i-check"/></svg><span>Facilitated cohorts</span></li><li><svg class="i" width="16" height="16" aria-hidden="true"><use href="#i-check"/></svg><span>Supervised fieldwork</span></li><li><svg class="i" width="16" height="16" aria-hidden="true"><use href="#i-check"/></svg><span>Indoor weather plan</span></li><li><svg class="i" width="16" height="16" aria-hidden="true"><use href="#i-check"/></svg><span>Final ARK forum</span></li></ul></article>
   </div>
-  <p class="snote">Every stream ships with a teacher guide and a parent guide.</p>
+  <p class="snote">Same lessons in every stream. Your package decides which guides and support you get.</p>
 </div></section>
 
 <section id="pack"><div class="wrap pack">
   <div>
     <p class="eyebrow">Liberland Science &amp; Civics Pack</p>
     <h2>Eight units. Six stories. One river nation.</h2>
+    <p class="sub">One common learning core across print, online and ARK. Learners choose a question, role and way to show what they know.</p>
     <div class="units">
-      <div><b>The River That Draws Borders</b><span>Geography + hydrology</span></div>
-      <div><b>Floodplain Forest</b><span>Ecology + survey methods</span></div>
-      <div><b>Whose Land Is It?</b><span>History + property</span></div>
-      <div><b>Rules We Choose</b><span>Constitutions + due process</span></div>
-      <div><b>Price Signals</b><span>Markets + incentives</span></div>
-      <div><b>Code &amp; Consent</b><span>Digital governance + privacy</span></div>
-      <div><b>Power Off the Grid</b><span>Energy + engineering</span></div>
-      <div><b>Build a Village</b><span>Design capstone</span></div>
+      <article class="unit"><span class="no">01</span><div><p class="subj">Hydrology + data</p><h3>The Danube as a Living System</h3><p class="d">Water movement, observation and what a sample cannot prove.</p></div></article>
+      <article class="unit"><span class="no">02</span><div><p class="subj">Ecology + sampling</p><h3>Danube Neighbours</h3><p class="d">Habitat needs, biodiversity counts and low-disturbance surveys.</p></div></article>
+      <article class="unit"><span class="no">03</span><div><p class="subj">Physics + design</p><h3>Energy, Materials &amp; Circular Design</h3><p class="d">Energy, material lifecycles and the case for repair or reuse.</p></div></article>
+      <article class="unit"><span class="no">04</span><div><p class="subj">Life science + systems</p><h3>Food, Soil &amp; Local Resilience</h3><p class="d">Soil, plant needs and fair tests, from seed to food choices.</p></div></article>
+      <article class="unit"><span class="no">05</span><div><p class="subj">Geography + source literacy</p><h3>Mapping Place &amp; Competing Claims</h3><p class="d">Maps, regional geography and claims carefully distinguished.</p></div></article>
+      <article class="unit"><span class="no">06</span><div><p class="subj">Civics + due process</p><h3>Rights, Rules &amp; Fair Decisions</h3><p class="d">Consent, rights and rules that can be explained and reviewed.</p></div></article>
+      <article class="unit"><span class="no">07</span><div><p class="subj">Economics + stewardship</p><h3>Markets, Property &amp; the Commons</h3><p class="d">Scarcity, incentives, ownership and shared-resource trade-offs.</p></div></article>
+      <article class="unit"><span class="no">08</span><div><p class="subj">Digital systems + privacy</p><h3>Digital Civics, Data &amp; Consent</h3><p class="d">Identity, data and governance through paper-first simulations.</p></div></article>
     </div>
   </div>
-  <aside class="stories"><h3>Audio stories</h3><p>For car rides, field walks and bedtime.</p>
-    <ul><li>The Ferry at Dawn</li><li>A Flag Without a Map</li><li>The Heron Census</li><li>Twelve Votes on an Island</li><li>The Market Boat</li><li>The Last Lantern</li></ul>
+  <aside class="stories"><svg class="i" width="28" height="28" aria-hidden="true"><use href="#i-headphones"/></svg><h3>Audio stories</h3><p>Six screen-free fictional stories, each paired with a unit and a question to keep thinking about.</p>
+    <ul>
+      <li><p class="t">The River’s Quiet Witness</p><p class="s">Two observers learn what a river sample can, and cannot, tell them.</p><p class="u">Units 1–2</p></li>
+      <li><p class="t">The Meadow Has Many Neighbours</p><p class="s">A survey changes when the team notices its route and timing.</p><p class="u">Unit 2</p></li>
+      <li><p class="t">The Repair Table</p><p class="s">A broken lamp sparks a repair, replacement and permission debate.</p><p class="u">Unit 3</p></li>
+      <li><p class="t">Seed, Soil, Promise</p><p class="s">Friends share a garden and work out how to keep it cared for.</p><p class="u">Unit 4</p></li>
+      <li><p class="t">The Map with Two Legends</p><p class="s">A young mapmaker learns to label source, boundary and claim.</p><p class="u">Unit 5</p></li>
+      <li><p class="t">The Rulebook and the Ledger</p><p class="s">A shared-resource rule meets the limits of a permanent digital record.</p><p class="u">Units 6–8</p></li>
+    </ul>
   </aside>
 </div></section>
 
 <section id="offers"><div class="wrap">
-  <p class="eyebrow">Licences and intensives</p>
-  <h2>Start at home. Scale to a school.</h2>
-  <div class="offers">
-    <article><h3>Family Pack</h3><p class="who">One family, all siblings</p><p class="price">$295</p><p class="unit">one-time</p><ul class="ticks"><li>Science &amp; Civics Pack</li><li>Parent guide</li><li>Portfolio prompts</li></ul><p class="note">or 3 payments of $109</p></article>
-    <article class="lead"><h3>Pod License</h3><p class="who">Microschools, 8&ndash;12 learners</p><p class="price">$890</p><p class="unit">per pod / year</p><ul class="ticks"><li>Everything in Family</li><li>Teacher guide</li><li>Two mentor calls</li></ul><p class="note">Teacher guide included</p></article>
-    <article><h3>Site License</h3><p class="who">Schools</p><p class="price">$2,900</p><p class="unit">per site / year</p><ul class="ticks"><li>Unlimited classes</li><li>Training session</li><li>Priority support</li></ul><p class="note">Staff onboarding session</p></article>
-    <article><h3>ARK Intensive</h3><p class="who">Cohorts and families</p><p class="price">Quote</p><p class="unit">dates + group size</p><ul class="ticks"><li>On-site field days</li><li>Coached project</li><li>Showcase forum</li></ul><p class="note">Stack on any pack</p></article>
+  <p class="eyebrow">Packages</p>
+  <h2>Four packages. Pick by who you teach.</h2>
+  <div class="keys">
+    <div><p class="eyebrow">How the learner learns</p><p class="term">Pathway</p><p>Academy and UnSchool come with every package. LIBERVERSE is an add-on.</p></div>
+    <div><p class="eyebrow">What you buy</p><p class="term">Package</p><p>Who is covered, what's inside, what help you get.</p></div>
+    <div><p class="eyebrow">Where it happens</p><p class="term">Delivery</p><p>Print, online, or at ARK. Print + online come with every package.</p></div>
   </div>
-  <p class="fine">Indicative pricing, confirmed on enquiry.</p>
+  <div class="offers">
+    <article class="" data-pkg="family"><h3>Family Pack</h3><p class="price">$295</p><p class="unitlbl">one-time</p><p class="note">or 3 payments of $109</p><div class="row"><p class="k">Who it's for</p><p class="v">A household teaching its own children</p></div><div class="row"><p class="k">Learners covered</p><p class="v">All siblings in one home, ages 6–18</p></div><div class="row"><p class="k">Access</p><p class="v">Keep the print files forever. Online access for 12 months.</p></div><div class="row"><p class="k">Content</p><ul class="ticks"><li><svg class="i" width="16" height="16" aria-hidden="true"><use href="#i-check"/></svg><span>Science &amp; Civics Pack: 8 units</span></li><li><svg class="i" width="16" height="16" aria-hidden="true"><use href="#i-check"/></svg><span>6 audio stories</span></li><li><svg class="i" width="16" height="16" aria-hidden="true"><use href="#i-check"/></svg><span>Practical skills cards: all 10</span></li></ul></div><div class="row"><p class="k">Formats</p><p class="v">Un-screen print pack + online course</p></div><div class="row"><p class="k">Guides</p><p class="v">Parent guide, UnSchool learning-contract templates</p></div><div class="row"><p class="k">Human support</p><p class="v">Email help with access and files</p></div><div class="row not"><p class="k">Not included</p><p class="v">Teacher guide, mentor calls, ARK days</p></div></article>
+    <article class="lead" data-pkg="pod"><h3>Pod License</h3><p class="price">$890</p><p class="unitlbl">per pod / year</p><p class="note">One named facilitator per pod</p><div class="row"><p class="k">Who it's for</p><p class="v">Microschools, co-ops and learning pods</p></div><div class="row"><p class="k">Learners covered</p><p class="v">One group of up to 12 learners</p></div><div class="row"><p class="k">Access</p><p class="v">12 months, renewable</p></div><div class="row"><p class="k">Content</p><ul class="ticks"><li><svg class="i" width="16" height="16" aria-hidden="true"><use href="#i-check"/></svg><span>Everything in the Family Pack</span></li><li><svg class="i" width="16" height="16" aria-hidden="true"><use href="#i-check"/></svg><span>Six-week Learning Lab, adapted to your own site</span></li></ul></div><div class="row"><p class="k">Formats</p><p class="v">Un-screen print pack + online course</p></div><div class="row"><p class="k">Guides</p><p class="v">Teacher guide, plus parent guide for each family</p></div><div class="row"><p class="k">Human support</p><p class="v">Two 45-minute mentor calls</p></div><div class="row not"><p class="k">Not included</p><p class="v">Extra pods, ARK days</p></div></article>
+    <article class="" data-pkg="site"><h3>Site License</h3><p class="price">$2,900</p><p class="unitlbl">per site / year</p><p class="note">One campus, any number of classes</p><div class="row"><p class="k">Who it's for</p><p class="v">Schools adding a Liberland strand</p></div><div class="row"><p class="k">Learners covered</p><p class="v">Every class and teacher at one campus</p></div><div class="row"><p class="k">Access</p><p class="v">12 months, renewable</p></div><div class="row"><p class="k">Content</p><ul class="ticks"><li><svg class="i" width="16" height="16" aria-hidden="true"><use href="#i-check"/></svg><span>Everything in the Pod License</span></li></ul></div><div class="row"><p class="k">Formats</p><p class="v">Un-screen print pack + online course</p></div><div class="row"><p class="k">Guides</p><p class="v">Teacher guide, parent guide, staff onboarding notes</p></div><div class="row"><p class="k">Human support</p><p class="v">One 2-hour staff training + priority email</p></div><div class="row not"><p class="k">Not included</p><p class="v">Other campuses, ARK days</p></div></article>
+    <article class="" data-pkg="ark"><h3>ARK Intensive</h3><p class="price">Quote</p><p class="unitlbl">per cohort</p><p class="note">Add it to any package above</p><div class="row"><p class="k">Who it's for</p><p class="v">Families, pods or classes who want the real river</p></div><div class="row"><p class="k">Learners covered</p><p class="v">One cohort; size set in the quote</p></div><div class="row"><p class="k">Access</p><p class="v">The dates you book</p></div><div class="row"><p class="k">Content</p><ul class="ticks"><li><svg class="i" width="16" height="16" aria-hidden="true"><use href="#i-check"/></svg><span>Six-week ARK Learning Lab on site</span></li><li><svg class="i" width="16" height="16" aria-hidden="true"><use href="#i-check"/></svg><span>Or a condensed field intensive</span></li><li><svg class="i" width="16" height="16" aria-hidden="true"><use href="#i-check"/></svg><span>Showcase at the ARK forum</span></li></ul></div><div class="row"><p class="k">Formats</p><p class="v">Face to face at ARK Village, Apatin</p></div><div class="row"><p class="k">Guides</p><p class="v">Pre-visit parent briefing, consent forms</p></div><div class="row"><p class="k">Human support</p><p class="v">ARK facilitators run every session</p></div><div class="row not"><p class="k">Not included</p><p class="v">Travel, stays and meals (booked from ARK's own menu)</p></div></article>
+  </div>
+  <div class="addons"><div><p class="big">Add-ons</p><p class="muted">Priced on enquiry. Stack on any package.</p></div><div class="grid"><div><b>UnSchool mentoring</b><span>A mentor agrees, checks and signs off a learner's own route.</span></div><div><b>LIBERVERSE Learning Lab</b><span>Online modules in digital civics, data and AI.</span></div><div><b>Portfolio review</b><span>Written feedback on a learner's finished evidence.</span></div></div></div>
+  <p class="fine">Draft prices, not yet final. ARK Intensive is quoted once ARK confirms an education-cohort rate.</p>
 </div></section>
 
 <section id="plan"><div class="wrap">
@@ -202,7 +290,7 @@ footer small{font-size:14px;line-height:1.6;opacity:.82}
   <h2>Pick your route. Keep the core.</h2>
   <div class="plan">
     <div id="choices"></div>
-    <aside class="yours"><p class="eyebrow">Your plan</p><p class="sum" id="sum"></p><p style="margin-top:24px;opacity:.8">Suggested start</p><p class="off" id="off"></p><p id="unit" style="font-size:14px;opacity:.7"></p><button class="btn btn-sun" id="copy" type="button">Copy plan for enquiry</button></aside>
+    <aside class="yours" aria-live="polite"><p class="eyebrow">Your plan</p><p class="sum" id="sum"></p><p style="margin-top:24px;opacity:.8">Suggested start</p><p class="off" id="off"></p><p id="unit" style="font-size:14px;opacity:.7"></p><p id="covers" style="margin-top:12px;opacity:.8"></p><button class="btn btn-sun" id="copy" type="button">Copy plan for enquiry</button></aside>
   </div>
 </div></section>
 
@@ -212,21 +300,35 @@ footer small{font-size:14px;line-height:1.6;opacity:.82}
 </div></footer>
 
 <script>
-const weeks=[["Read the place","Annotated map and one learner question","System map, investigable question, baseline plan"],["Water: observe and measure","Water observation sheet and picture graph","Sampling plan, measurements, limitations note"],["Who lives here?","Habitat sketch and species tally","Repeatable survey, dataset, interpretation"],["Food and circular resources","Resource journey storyboard and sorting tally","Resource audit and a quantified opportunity"],["Design a small improvement","Tested model or sign prototype","Criteria-led prototype and feedback record"],["Share, decide, reflect","Team showcase and one thing I learned","Evidence-backed pitch to the ARK forum"]];
-const ol=document.getElementById("weeks");
-function drawWeeks(b){ol.innerHTML=weeks.map((w,i)=>`<li><span class="n">${i+1}</span><h3>${w[0]}</h3><p class="rise"><b>EVIDENCE</b>${b==="p"?w[1]:w[2]}</p></li>`).join("")}
-drawWeeks("p");
-document.querySelectorAll(".tabs button").forEach(t=>t.addEventListener("click",()=>{document.querySelectorAll(".tabs button").forEach(x=>x.setAttribute("aria-selected",x===t));drawWeeks(t.dataset.band)}));
-const offers={family:["Family Pack","$295","one-time"],pod:["Pod License","$890","per pod / year"],school:["Site License","$2,900","per site / year"]};
+// ARK journey: age-band tabs
+document.querySelectorAll(".tabs button").forEach(t=>t.addEventListener("click",()=>{
+  document.querySelectorAll(".tabs button").forEach(x=>x.setAttribute("aria-selected",x===t));
+  document.querySelectorAll("#weeks .ev").forEach(p=>{const s=p.querySelector("span");s.textContent=p.dataset[t.dataset.band];p.classList.remove("rise");void p.offsetWidth;p.classList.add("rise")});
+}));
+// Practical skills: age-band toggle
+const skb=document.getElementById("skband");
+skb.addEventListener("click",ev=>{const b=ev.target.closest("button");if(!b)return;
+  skb.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b));
+  document.querySelectorAll(".sk .task").forEach(p=>{p.textContent=p.dataset[b.dataset.v.replace("-","")]||p.getAttribute("data-"+b.dataset.v);p.classList.remove("rise");void p.offsetWidth;p.classList.add("rise")});
+});
+// Plan builder (nothing is submitted or stored)
+const offers={"family":{"name":"Family Pack","price":"$295","unit":"one-time","covers":"All siblings in one home, ages 6–18"},"pod":{"name":"Pod License","price":"$890","unit":"per pod / year","covers":"One group of up to 12 learners"},"school":{"name":"Site License","price":"$2,900","unit":"per site / year","covers":"Every class and teacher at one campus"}};
 const choices={path:["Pathway",[["academy","Liberland Academy"],["unschool","UnSchool"],["liberverse","LIBERVERSE Learning Lab"]]],mode:["Delivery",[["unscreen","Un-screen pack"],["online","Online course"],["ark","ARK on-site"]]],band:["Age band",[["6-8","6\u20138"],["9-11","9\u201311"],["12-14","12\u201314"],["15-18","15\u201318"]]],group:["Group",[["family","One family"],["pod","Pod of 8\u201312"],["school","Whole school"]]]};
 const sel={path:"unschool",mode:"unscreen",band:"9-11",group:"family"};
 const box=document.getElementById("choices");
 box.innerHTML=Object.entries(choices).map(([k,[label,opts]])=>`<div class="choice"><p class="eyebrow">${label}</p><div class="opts">${opts.map(([v,l])=>`<button type="button" data-k="${k}" data-v="${v}" aria-pressed="${sel[k]===v}">${l}</button>`).join("")}</div></div>`).join("");
 const nm=k=>choices[k][1].find(([v])=>v===sel[k])[1];
-function render(){box.querySelectorAll("button").forEach(b=>b.setAttribute("aria-pressed",sel[b.dataset.k]===b.dataset.v));const o=offers[sel.group];document.getElementById("sum").textContent=`${nm("path")}, ${nm("mode")}, ages ${nm("band")}.`;document.getElementById("off").textContent=`${o[0]} \u00b7 ${o[1]}`;document.getElementById("unit").textContent=o[2]+(sel.mode==="ark"?" + ARK Intensive by quote":"")}
-box.addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;sel[b.dataset.k]=b.dataset.v;render()});
+const extras=()=>(sel.mode==="ark"?" + ARK Intensive by quote":"")+(sel.path==="liberverse"?" + LIBERVERSE add-on":"");
+function render(){box.querySelectorAll("button").forEach(b=>b.setAttribute("aria-pressed",sel[b.dataset.k]===b.dataset.v));const o=offers[sel.group];
+  document.getElementById("sum").textContent=`${nm("path")}, ${nm("mode")}, ages ${nm("band")}.`;
+  document.getElementById("off").textContent=`${o.name} \u00b7 ${o.price}`;
+  document.getElementById("unit").textContent=o.unit+extras();
+  document.getElementById("covers").textContent="Covers: "+o.covers;}
+box.addEventListener("click",ev=>{const b=ev.target.closest("button");if(!b)return;sel[b.dataset.k]=b.dataset.v;render()});
 render();
-document.getElementById("copy").addEventListener("click",e=>{const o=offers[sel.group];const t=`Liberland Academy plan: ${nm("path")} \u00b7 ${nm("mode")} \u00b7 ages ${nm("band")} \u00b7 ${nm("group")}. Suggested: ${o[0]} (${o[1]} ${o[2]})${sel.mode==="ark"?" + ARK Intensive quote":""}.`;navigator.clipboard&&navigator.clipboard.writeText(t);e.target.textContent="Copied";setTimeout(()=>e.target.textContent="Copy plan for enquiry",1800)});
+document.getElementById("copy").addEventListener("click",ev=>{const o=offers[sel.group];
+  const t=`Liberland Academy plan: ${nm("path")} \u00b7 ${nm("mode")} \u00b7 ages ${nm("band")} \u00b7 ${nm("group")}. Suggested: ${o.name} (${o.price} ${o.unit})${sel.mode==="ark"?" + ARK Intensive quote":""}${sel.path==="liberverse"?" + LIBERVERSE add-on":""}.`;
+  navigator.clipboard&&navigator.clipboard.writeText(t).catch(()=>{});ev.currentTarget.textContent="Copied";const btn=ev.currentTarget;setTimeout(()=>btn.textContent="Copy plan for enquiry",1800)});
 </script>
 </body>
 </html>
