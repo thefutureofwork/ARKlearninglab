@@ -20,4 +20,4 @@ Liberland's official Constitution page says the Constitution is being drafted. T
 - `curriculum.html`: lesson-based public curriculum overview.
 - `safeguarding.html`: public safeguarding framework draft.
 
-GitHub Pages is published from the `gh-pages` branch. Keep changes intended for the live site on that branch.
+GitHub Pages is configured to publish from the `main` branch root. Keep changes intended for the live site on `main`.
