@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Personalized Learning Plans | Liberland Academy</title>
+<meta name="description" content="Liberland Academy personalized learning plans: one learner profile, a baseline, one to three SMART goals, named supports and a lesson-based review rhythm.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;700&family=Hind:wght@400;500&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--sun:oklch(.86 .165 92);--ink:oklch(.2 .02 95);--paper:oklch(.985 .012 95);--river:oklch(.47 .1 140);--wash:oklch(.94 .035 140);--rule:oklch(.88 .015 95);--display:"Familjen Grotesk",system-ui,sans-serif;--sans:"Hind",system-ui,sans-serif;--mono:"IBM Plex Mono",ui-monospace,monospace}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:400 18px/1.55 var(--sans)}a{color:inherit}
+header{background:var(--sun);padding:20px 0}nav,.wrap{max-width:1080px;margin:auto;padding:0 24px}nav{display:flex;justify-content:space-between;gap:16px;align-items:center;font-weight:500}nav a{text-decoration:none}nav .brand{font:700 20px var(--display)}nav .links{display:flex;gap:20px;flex-wrap:wrap}
+.hero{padding:72px 24px 64px}.eyebrow{font:500 14px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--river)}header .eyebrow{color:oklch(.35 .09 100)}
+h1,h2,h3{font-family:var(--display);line-height:1.08;letter-spacing:-.02em;margin:0}h1{font-size:clamp(46px,8vw,84px);max-width:900px;margin-top:14px}h2{font-size:clamp(32px,5vw,48px);margin:12px 0 18px}h3{font-size:22px}
+.lead{font-size:21px;max-width:780px;margin-top:20px}.status{display:inline-block;margin-top:22px;padding:9px 13px;border:2px solid var(--ink);border-radius:4px;font:500 14px var(--mono);text-transform:uppercase}
+.jump{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}.jump a{display:inline-block;padding:10px 14px;border:1px solid var(--ink);border-radius:4px;text-decoration:none;font-weight:500}
+.section{padding:68px 0}.wash{background:var(--wash)}
+.rule3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}.rule3 div{border-top:6px solid var(--river);padding-top:14px}.rule3 b{font:700 30px var(--display);display:block}
+.fields{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px}.card{padding:20px;background:white;border:1px solid var(--rule);border-radius:5px}.card p{font-size:16px;margin:8px 0 0}.card .n{font:500 13px var(--mono);color:var(--river)}
+ol.steps{padding-left:26px;display:grid;gap:14px;margin-top:20px}ol.steps strong{font-family:var(--display);font-size:20px}
+.cadence{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:24px;border:2px solid var(--ink);border-radius:6px;overflow:hidden}.cadence div{padding:22px;background:white}.cadence div+div{border-left:2px solid var(--ink)}.cadence .when{font:500 14px var(--mono);color:var(--river);text-transform:uppercase}.cadence p{font-size:16px}
+.callout{border-left:6px solid var(--river);background:var(--wash);padding:20px 24px;margin-top:24px}.callout strong{font:700 21px var(--display)}
+.ex{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:22px}.ex blockquote{margin:0;padding:22px;background:white;border:1px solid var(--rule);border-radius:5px;font-size:17px}.ex cite{display:block;font:500 13px var(--mono);font-style:normal;color:var(--river);margin-bottom:8px;text-transform:uppercase}
+.builder{display:grid;grid-template-columns:1fr 26rem;gap:32px;margin-top:28px;align-items:start}
+.form{display:grid;grid-template-columns:1fr 1fr;gap:14px}.form label{display:grid;gap:6px;font:500 15px var(--sans)}.form .wide{grid-column:1/-1}
+input,select{font:400 16px var(--sans);padding:10px 12px;border:1px solid oklch(.2 .02 95 / .3);border-radius:4px;background:white;color:var(--ink);width:100%}input:focus,select:focus,button:focus-visible,a:focus-visible{outline:3px solid var(--river);outline-offset:2px}
+.sheet{background:white;border:2px solid var(--ink);border-radius:6px;padding:26px;position:sticky;top:16px}.sheet h3{font-size:26px}.sheet .row{border-top:1px solid var(--rule);padding:10px 0}.sheet .k{font:500 12.5px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--river)}.sheet .v{font-size:16px;margin-top:3px}.sheet .goal{font:600 19px/1.35 var(--display);background:var(--sun);padding:14px;border-radius:4px;margin:12px 0}
+.btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}.btn{padding:11px 16px;border:2px solid var(--ink);border-radius:4px;background:var(--ink);color:var(--paper);font:500 15px var(--sans);cursor:pointer}.btn.line{background:transparent;color:var(--ink)}
+.note{font-size:15px;opacity:.8;margin-top:12px}.check{display:inline-block;margin-top:8px;padding:6px 10px;border-radius:4px;font:500 13px var(--mono)}.ok{background:oklch(.92 .06 140)}.warn{background:oklch(.93 .08 70)}
+footer{background:var(--ink);color:var(--paper);padding:28px 0;font-size:15px}footer a{color:var(--sun)}
+@media(max-width:860px){.fields,.rule3,.cadence,.ex,.builder{grid-template-columns:1fr}.cadence div+div{border-left:0;border-top:2px solid var(--ink)}.sheet{position:static}}
+@media(max-width:540px){nav{align-items:flex-start;flex-direction:column}.hero{padding-top:48px}.section{padding:48px 0}.form{grid-template-columns:1fr}}
+@media print{header,footer,.noprint,.section:not(#builder){display:none}#builder{padding:0}.builder{display:block}.form{display:none}.sheet{border:1px solid #000;position:static}}
+</style>
+</head>
+<body>
+<header><nav><a class="brand" href="./">Liberland Academy</a><div class="links"><a href="./">Home</a><a href="curriculum.html">Curriculum</a><a href="safeguarding.html">Safeguarding</a></div></nav>
+<div class="wrap hero"><p class="eyebrow">Personalized learning plans</p><h1>One learner. One sharp goal. Checked every lesson.</h1><p class="lead">Every Academy, UnSchool and LIBERVERSE Learning Lab learner can have a one-page plan: who they are, where they start, what they are aiming for, what helps, and who checks.</p><span class="status">Draft model · not an IEP or legal document</span><div class="jump"><a href="#model">The model</a><a href="#steps">Build it in 45 minutes</a><a href="#review">Review rhythm</a><a href="#builder">Draft a plan</a></div></div></header>
+<main>
+<section class="section" id="model"><div class="wrap"><p class="eyebrow">The rule of the plan</p><h2>Start narrow. Measure honestly. Adjust without guilt.</h2>
+<div class="rule3"><div><b>1–3 goals</b>Start with one. Add a second only once the first runs on its own.</div><div><b>A baseline first</b>A quick check or recent work sample before any goal is written.</div><div><b>Named owners</b>Every goal says who tracks it and when it is reviewed.</div></div>
+<div class="fields">
+<div class="card"><span class="n">FIELD 1</span><h3>Learner profile</h3><p>Strengths, interests, preferred ways of learning and showing work, access needs.</p></div>
+<div class="card"><span class="n">FIELD 2</span><h3>Baseline</h3><p>Current level from a diagnostic, knowledge check or portfolio item, with the date collected.</p></div>
+<div class="card"><span class="n">FIELD 3</span><h3>SMART goals</h3><p>One to three: specific, measurable, achievable, relevant, and due by a named lesson or date.</p></div>
+<div class="card"><span class="n">FIELD 4</span><h3>Strategies and supports</h3><p>The method, tool, scaffold or mentor time that will get there, and who provides it.</p></div>
+<div class="card"><span class="n">FIELD 5</span><h3>Monitoring plan</h3><p>What is checked, by whom, how often, and where it is recorded.</p></div>
+<div class="card"><span class="n">FIELD 6</span><h3>Agreement</h3><p>Learner, parent or guardian and teacher or mentor confirm the plan and the first review.</p></div>
+</div>
+<div class="callout"><strong>Where it fits.</strong><p>The plan sits on top of the shared curriculum, never instead of it. Goals personalize pace, support and evidence format; core outcomes for each age band stay the same. In UnSchool, the plan is the learning contract. Stewardship can be a goal too: a care routine kept up, a resource tracked, a promise to a team honoured.</p></div>
+</div></section>
+
+<section class="section wash" id="steps"><div class="wrap"><p class="eyebrow">Build it in about 45 minutes</p><h2>Five steps, in order.</h2>
+<ol class="steps">
+<li><strong>Gather evidence and write the profile.</strong> Use a short diagnostic, the last unit's knowledge check or portfolio work, plus what the learner says is hard and what they enjoy.</li>
+<li><strong>Agree one to three SMART goals with the learner.</strong> The learner helps write them. Goals come from what actually matters this term, not a wish list.</li>
+<li><strong>Choose strategies and name owners.</strong> Extra practice, a scaffold, mentor time, an audio story, a different evidence format: each with the adult responsible.</li>
+<li><strong>Set the review rhythm.</strong> A micro-check every lesson, a progress note at the end of every unit, a full review at the end of the sequence.</li>
+<li><strong>Share it and hold the first check-in within two lessons.</strong> A plan in a drawer helps nobody.</li>
+</ol>
+<div class="ex">
+<blockquote><cite>Academic goal · Unit 1, ages 9–11</cite>By Lesson 4 of <em>The Danube as a Living System</em>, Mila will raise her vocabulary check from 3 of 8 to 7 of 8 key terms, tracked by a two-minute recall check at the end of each lesson and logged in her field journal.</blockquote>
+<blockquote><cite>Self-management goal · UnSchool, ages 12–14</cite>Over the next 8 lessons, Teo will bring a complete evidence item to 7 of 8 sessions, tracked on a lesson checklist his mentor initials, with a choice of written, drawn or spoken evidence.</blockquote>
+</div>
+<p class="note">Names are fictional examples. Both goals carry a number, a deadline and a tracking method inside the sentence.</p>
+</div></section>
+
+<section class="section" id="review"><div class="wrap"><p class="eyebrow">Review rhythm · counted in lessons, not weeks</p><h2>Check small, often.</h2>
+<div class="cadence">
+<div><span class="when">Every lesson</span><h3>Micro-check</h3><p>Two minutes: did the agreed task happen? One tally or tick in the log. The learner answers one prompt: what helped, what got in the way.</p></div>
+<div><span class="when">Every 4 lessons · end of unit</span><h3>Progress note</h3><p>Compare the evidence to baseline. A 15-minute check-in: What's working? What's stuck? What changes next?</p></div>
+<div><span class="when">After 32 lessons · or term end</span><h3>Full review</h3><p>Reset goals, update the learner profile, celebrate what was met and decide what carries forward.</p></div>
+</div>
+<div class="callout"><strong>Adjustment rules.</strong><p>Goal met at two check-ins in a row with little effort: raise the bar. Goal missed three check-ins running: change the goal or the strategy, not just the pressure on the learner. Date every change with a one-line reason.</p></div>
+<div class="fields">
+<div class="card"><h3>Learner</h3><p>Does the agreed task and answers one reflection prompt per check-in. Helps write and revise goals.</p></div>
+<div class="card"><h3>Parent or guardian</h3><p>Protects the learning time, sets up a calm workspace, encourages without nagging, joins unit check-ins.</p></div>
+<div class="card"><h3>Teacher or mentor</h3><p>Teaches, collects the evidence, proposes adjustments when the data calls for it, keeps the plan record.</p></div>
+</div>
+<p class="note">Expect real gains over time. In a multi-year RAND study of personalized-learning schools, the stronger maths gains tended to appear in the second year. Confidence and consistency often improve before scores do.</p>
+</div></section>
+
+<section class="section wash" id="builder"><div class="wrap"><p class="eyebrow noprint">Draft a plan</p><h2 class="noprint">Fill it in. Print it. Nothing is saved or sent.</h2>
+<div class="builder">
+<div class="form noprint">
+<label>Learner (first name or initials)<input id="name" value="Mila"></label>
+<label>Age band<select id="band"><option>6–8</option><option selected>9–11</option><option>12–14</option><option>15–18</option></select></label>
+<label>Pathway<select id="path"><option>Liberland Academy</option><option>UnSchool</option><option>LIBERVERSE Learning Lab</option></select></label>
+<label>Delivery<select id="mode"><option>Un-screen pack</option><option>Online course</option><option>ARK on-site</option></select></label>
+<label class="wide">Strengths and interests<input id="strengths" value="Loves drawing maps; explains ideas well out loud"></label>
+<label class="wide">Focus<select id="focus"><option>Unit 1 · The Danube as a Living System</option><option>Unit 2 · Danube Neighbours</option><option>Unit 3 · Energy, Materials &amp; Circular Design</option><option>Unit 4 · Food, Soil &amp; Local Resilience</option><option>Unit 5 · Mapping Place &amp; Competing Claims</option><option>Unit 6 · Rights, Rules &amp; Fair Decisions</option><option>Unit 7 · Markets, Property &amp; the Commons</option><option>Unit 8 · Digital Civics, Data &amp; Consent</option><option>Practical skills card</option><option>Self-management</option></select></label>
+<label class="wide">What is measured<input id="measure" value="key terms recalled on the end-of-lesson check"></label>
+<label>Baseline<input id="base" type="number" min="0" value="3"></label>
+<label>Target<input id="target" type="number" min="0" value="7"></label>
+<label>Out of<input id="outof" type="number" min="1" value="8"></label>
+<label>Reach it by lesson<input id="by" type="number" min="1" max="32" value="4"></label>
+<label class="wide">Main strategy<select id="strategy"><option>two-minute recall practice at the start of each lesson</option><option>a visual organizer or map for each new idea</option><option>mentor feedback after every lesson</option><option>choice of spoken, drawn or written evidence</option><option>pairing with an audio story before the lesson</option><option>a daily checklist the learner ticks</option></select></label>
+<label>Tracked in<select id="tracker"><option>field journal</option><option>printed lesson log</option><option>private online portfolio</option></select></label>
+<label>Checked by<select id="owner"><option>parent or guardian</option><option>teacher</option><option>UnSchool mentor</option><option>ARK facilitator</option></select></label>
+</div>
+<aside class="sheet" aria-live="polite">
+<p class="eyebrow">Personal learning plan · draft</p><h3 id="o-name"></h3><p class="v" id="o-meta"></p>
+<div class="row"><p class="k">Profile</p><p class="v" id="o-str"></p></div>
+<div class="row"><p class="k">Baseline</p><p class="v" id="o-base"></p></div>
+<p class="goal" id="o-goal"></p>
+<span class="check" id="o-check"></span>
+<div class="row"><p class="k">Support</p><p class="v" id="o-sup"></p></div>
+<div class="row"><p class="k">Reviews</p><p class="v" id="o-rev"></p></div>
+<div class="row"><p class="k">Agreed by</p><p class="v">Learner ______ · Guardian ______ · Teacher/mentor ______ · Date ______</p></div>
+<div class="btns noprint"><button class="btn" type="button" id="print">Print one-page plan</button><button class="btn line" type="button" id="copy">Copy goal</button></div>
+<p class="note noprint">Runs only in your browser. Use initials, not full names, and keep completed plans in your private records.</p>
+</aside>
+</div></div></section>
+
+<section class="section noprint"><div class="wrap"><p class="eyebrow">Boundaries</p><h2>A planning tool, not a legal plan.</h2><p>A personalized learning plan is voluntary and flexible. It is not an Individualized Education Program, a diagnosis or a statement of legal entitlements; learners with additional needs should be supported through the appropriate formal process where they live. Plans are stored privately, shared only with the people named in them, and never published or placed on a blockchain. Any learner data handling follows the <a href="safeguarding.html">draft safeguarding framework</a>, which must be finalized before enrolment.</p>
+<p class="note">Model adapted from Réussite A+, <a href="https://reussiteaplus.com/en/personalized-learning-plans/">Personalized learning plans: a template for families and teachers</a>, which draws on model PLP templates and RAND research on personalized learning.</p></div></section>
+</main>
+<footer><div class="wrap">Liberland Academy · <a href="curriculum.html">Curriculum</a> · <a href="safeguarding.html">Safeguarding</a></div></footer>
+<script>
+const $=id=>document.getElementById(id);
+const ids=["name","band","path","mode","strengths","focus","measure","base","target","outof","by","strategy","tracker","owner"];
+function render(){
+  const v={};ids.forEach(i=>v[i]=$(i).value.trim());
+  const n=v.name||"The learner", base=+v.base, tgt=+v.target, out=+v.outof, by=+v.by;
+  const unitLessons=v.focus.startsWith("Unit")?" of "+v.focus.split("· ")[1]:"";
+  $("o-name").textContent=n;
+  $("o-meta").textContent="Ages "+v.band+" · "+v.path+" · "+v.mode;
+  $("o-str").textContent=v.strengths||"Add strengths and interests.";
+  $("o-base").textContent=base+" of "+out+" "+v.measure+" (record the date).";
+  $("o-goal").textContent="By Lesson "+by+unitLessons+", "+n+" will move from "+base+" to "+tgt+" of "+out+" "+v.measure+", using "+v.strategy+", tracked in the "+v.tracker+" and checked by the "+v.owner+".";
+  const c=$("o-check");
+  if(tgt<=base){c.textContent="Target should be above baseline";c.className="check warn"}
+  else if(tgt>out){c.textContent="Target can't exceed the total";c.className="check warn"}
+  else if(tgt-base>out*0.6&&by<4){c.textContent="Big jump, short time: check it's achievable";c.className="check warn"}
+  else{c.textContent="Specific · measurable · time-bound ✓";c.className="check ok"}
+  $("o-sup").textContent=v.strategy.charAt(0).toUpperCase()+v.strategy.slice(1)+". Owner: "+v.owner+".";
+  $("o-rev").textContent="Micro-check every lesson · progress note every 4 lessons · first check-in within 2 lessons · full review after 32 lessons.";
+}
+ids.forEach(i=>{$(i).addEventListener("input",render);$(i).addEventListener("change",render)});
+$("print").addEventListener("click",()=>window.print());
+$("copy").addEventListener("click",e=>{navigator.clipboard&&navigator.clipboard.writeText($("o-goal").textContent).catch(()=>{});e.currentTarget.textContent="Copied";const b=e.currentTarget;setTimeout(()=>b.textContent="Copy goal",1600)});
+render();
+</script>
+</body></html>
