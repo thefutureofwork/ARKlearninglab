@@ -1,23 +1,22 @@
-# Liberland Academy
+# Liberland Academy website (draft)
 
-Public website for **Liberland Academy**, with **UnSchool** and **LIBERVERSE Learning Lab** pathways, the ARK Learning Lab pilot, practical skills, and the Liberland Science & Civics Pack.
+Static site served by GitHub Pages: https://thefutureofwork.github.io/liberlandacademy/
 
-## Public pages
+| Page | Purpose |
+|---|---|
+| index.html | Home: what Liberland is, the 3 pathways, where lessons happen, plans, 5-step joining chain, FAQ |
+| about.html | What Liberland is (sourced from liberland.org) and why this school exists |
+| curriculum.html | Pathway comparison, Academy 32-lesson map, UnSchool, age progression |
+| liberverse.html | LIBERVERSE Learning Lab: 24 modules across 4 age groups |
+| plans.html | Free 10-step learning plan guide and builder |
+| mentors.html | What a mentor does, meeting lengths and formats, founding mentor profile |
+| pricing.html | Single source of truth for prices, with calculator |
+| safeguarding.html | Draft safeguarding framework by place |
+| mini-pod.html | Redirect to pricing.html#mini-pod |
+| style.css | Shared stylesheet for every page |
 
-- [Home](https://thefutureofwork.github.io/liberlandacademy/): pathways, ARK pilot, practical skills, Science & Civics Pack, packages and plan builder.
-- [Curriculum framework](https://thefutureofwork.github.io/liberlandacademy/curriculum.html): proposed 32-lesson sequence across eight units, shared outcomes, stewardship, age progression and flexible pacing.
-- [Safeguarding framework](https://thefutureofwork.github.io/liberlandacademy/safeguarding.html): proposed commitments and pre-launch gates for any programme involving minors.
+Billing (draft, not for sale): One Learner $490/yr (1 seat); mini Pod $890/yr (up to 4); full Pod $1,490/yr (up to 10); extra seats $200 each, max 2 per plan; school site licence $2,900/yr for 13+. Add-ons: 1:1 Mentoring $120/learner/month, Learning Plan Setup $245, Portfolio Review $149, ARK visit days by quote (not open).
 
-## Important status
+Where lessons happen: at home (print pack), online, at a pod's own venue, and later optional days at ARK Village, Apatin, Serbia. Mentoring is online. No lessons on Liberland territory.
 
-The curriculum and safeguarding pages are working drafts. The 32-lesson count is a proposed planning baseline: four lessons per unit across eight units. Detailed lesson guides remain to be written. The Academy is enrichment, not an accredited school or qualification. The safeguarding page is not an approved or operational policy and does not establish that a programme is ready to receive minors. Name responsible safeguarding contacts, confirm procedures and complete qualified local legal review before enrolment or on-site activity involving children.
-
-Liberland's official Constitution page says the Constitution is being drafted. Teach current text, proposals and learning simulations as distinct things. Source: https://liberland.org/constitution.
-
-## Project files
-
-- `index.html`: main static website; no build step.
-- `curriculum.html`: lesson-based public curriculum overview.
-- `safeguarding.html`: public safeguarding framework draft.
-
-GitHub Pages is configured to publish from the `main` branch root. Keep changes intended for the live site on `main`.
+Wording: learner/student, parent/guardian, mentor. No payment details are collected on this site.
