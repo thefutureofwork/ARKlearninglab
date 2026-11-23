@@ -1,27 +1,19 @@
-# Liberland Academy website (draft)
+# Liberland Academy
 
-Static site served by GitHub Pages: https://thefutureofwork.github.io/liberlandacademy/
+Public site for **Liberland Academy**, with **UnSchool** and **LIBERVERSE Learning Lab** pathways, a practical-skills strand, the Science & Civics Pack and the ARK Learning Lab pilot.
 
-**Publish from `main` (root).** The old `gh-pages` branch holds an earlier 4-file version and should not be used as the Pages source.
+## Public pages
 
-| Page | Purpose |
-|---|---|
-| index.html | Home: what Liberland is, the 3 pathways, where lessons happen, plans, 5-step joining chain, FAQ |
-| about.html | What Liberland is (Liberland's own sources plus Croatia's stated position) and why this school exists |
-| curriculum.html | Pathway comparison, Academy 32-lesson map, UnSchool, age progression |
-| liberverse.html | LIBERVERSE Learning Lab: 24 modules across 4 age groups (static list if JavaScript is off) |
-| plans.html | Free 10-step learning plan guide and builder |
-| mentors.html | What a mentor does, meeting lengths and formats, founding mentor profile |
-| pricing.html | Single source of truth for prices, with per-learner pathway calculator |
-| safeguarding.html | Draft safeguarding framework by place |
-| mini-pod.html | Redirect to pricing.html#mini-pod |
-| sitemap.xml, robots.txt | Search discovery |
-| style.css | Shared stylesheet for every page |
+- [Home](https://thefutureofwork.github.io/liberlandacademy/): audience-first overview, learner partnership, practical skills, draft packages and a balanced civics introduction.
+- [Curriculum framework](https://thefutureofwork.github.io/liberlandacademy/curriculum.html): proposed 32-lesson sequence across eight units, shared outcomes, learner choice and age progression.
+- [Safeguarding framework](https://thefutureofwork.github.io/liberlandacademy/safeguarding.html): named lead, interim LinkedIn contact, proposed commitments and pre-launch gates.
 
-Billing (draft, not for sale): One Learner $490/yr (1 seat); mini Pod $890/yr (up to 4); full Pod $1,490/yr (up to 10); extra seats $200 each, max 2 per plan; school site licence $2,900/yr for 13+. Add-ons: 1:1 Mentoring $120/learner/month, Learning Plan Setup $245, Portfolio Review $149, ARK visit days by quote (not open).
+## Status and philosophy
 
-Joining is interest-only until the safeguarding launch gates (named lead and alternate, private reporting route, legal review) are closed.
+The curriculum and safeguarding framework are working drafts. Liberland is a civics case study, not a political belief test. Learners are invited to compare evidence and viewpoints, including liberty, voluntary cooperation, markets, public services and commons. No learner is expected to adopt a political position. Students help choose inquiry questions, roles, evidence formats and programme improvements; adults remain responsible for shared outcomes and safety.
 
-Where lessons happen: at home (print pack), online, at a pod's own venue, and later optional days at ARK Village, Apatin, Serbia. Mentoring is online. No lessons on Liberland territory.
+The Academy is enrichment, not an accredited school or qualification. The 32-lesson count is a proposed planning baseline, not a completed set of lesson guides. The safeguarding page is not an approved policy and does not establish readiness to receive minors. Complete local legal and safeguarding review before enrolment or on-site activity involving children.
 
-Wording: learner/student, parent/guardian, mentor. No payment details are collected on this site.
+## Publishing
+
+As of 23 November 2026, the live homepage matches the `gh-pages` branch, while `main` contains the current multi-page source. Keep the homepage and any changes intended for immediate public release mirrored on both branches until the repository's GitHub Pages source is confirmed and consolidated in repository settings. Do not assume that a commit to `main` has reached the public site.
