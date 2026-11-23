@@ -4,8 +4,10 @@ Public site for **Liberland Academy**, with **UnSchool** and **LIBERVERSE Learni
 
 ## Public pages
 
-- [Home](https://thefutureofwork.github.io/liberlandacademy/): audience-first overview, learner partnership, practical skills, draft packages and a balanced civics introduction.
-- [Curriculum framework](https://thefutureofwork.github.io/liberlandacademy/curriculum.html): proposed 32-lesson sequence across eight units, shared outcomes, learner choice and age progression.
+- [Home](https://thefutureofwork.github.io/liberlandacademy/): welcoming, audience-first overview, learner partnership, practical skills, draft packages and a balanced civics introduction.
+- [About Liberland](https://thefutureofwork.github.io/liberlandacademy/about.html): plain facts, both sides of the territorial dispute, and why it is used as one case study.
+- [Curriculum framework](https://thefutureofwork.github.io/liberlandacademy/curriculum.html): colour-coded pathway comparison, proposed 32-lesson map, learner choice, microstates comparison and age progression.
+- [LIBERVERSE](https://thefutureofwork.github.io/liberlandacademy/liberverse.html), [Learning plans](https://thefutureofwork.github.io/liberlandacademy/plans.html), [Mentors](https://thefutureofwork.github.io/liberlandacademy/mentors.html), [Pricing](https://thefutureofwork.github.io/liberlandacademy/pricing.html).
 - [Safeguarding framework](https://thefutureofwork.github.io/liberlandacademy/safeguarding.html): named lead, interim LinkedIn contact, proposed commitments and pre-launch gates.
 
 ## Status and philosophy
@@ -16,4 +18,6 @@ The Academy is enrichment, not an accredited school or qualification. The 32-les
 
 ## Publishing
 
-As of 23 November 2026, the live homepage matches the `gh-pages` branch, while `main` contains the current multi-page source. Keep the homepage and any changes intended for immediate public release mirrored on both branches until the repository's GitHub Pages source is confirmed and consolidated in repository settings. Do not assume that a commit to `main` has reached the public site.
+As of 23 November 2026, the live site serves pages that exist only on `main` (for example `about.html`, `pricing.html`), so `main` is the publish source. `gh-pages` is a partial legacy copy (home, curriculum, safeguarding, style) kept in sync but not used for deployment; it can be deleted once the Pages setting is double-checked in Settings > Pages.
+
+The public CDN can serve a cached copy for a few minutes after a commit. To check a fresh deploy, add a query string, e.g. `index.html?v=1`.
