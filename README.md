@@ -1,23 +1,19 @@
 # Liberland Academy
 
-Public website for **Liberland Academy**, with **UnSchool** and **LIBERVERSE Learning Lab** pathways, the ARK Learning Lab pilot, practical skills, and the Liberland Science & Civics Pack.
+Public website for **Liberland Academy**, with **UnSchool** and **LIBERVERSE Learning Lab** pathways, a practical-skills strand, the Science & Civics Pack and the ARK Learning Lab pilot.
 
 ## Public pages
 
-- [Home](https://thefutureofwork.github.io/liberlandacademy/): pathways, ARK pilot, practical skills, Science & Civics Pack, packages and plan builder.
-- [Curriculum framework](https://thefutureofwork.github.io/liberlandacademy/curriculum.html): proposed 32-lesson sequence across eight units, shared outcomes, stewardship, age progression and flexible pacing.
-- [Safeguarding framework](https://thefutureofwork.github.io/liberlandacademy/safeguarding.html): proposed commitments and pre-launch gates for any programme involving minors.
+- [Home](https://thefutureofwork.github.io/liberlandacademy/): audience-first overview, learner partnership, practical skills, draft packages and a balanced civics introduction.
+- [Curriculum framework](https://thefutureofwork.github.io/liberlandacademy/curriculum.html): proposed 32-lesson sequence across eight units, shared outcomes, learner choice and age progression.
+- [Safeguarding framework](https://thefutureofwork.github.io/liberlandacademy/safeguarding.html): named lead, interim LinkedIn contact, proposed commitments and pre-launch gates.
 
-## Important status
+## Status and philosophy
 
-The curriculum and safeguarding pages are working drafts. The 32-lesson count is a proposed planning baseline: four lessons per unit across eight units. Detailed lesson guides remain to be written. The Academy is enrichment, not an accredited school or qualification. The safeguarding page is not an approved or operational policy and does not establish that a programme is ready to receive minors. Name responsible safeguarding contacts, confirm procedures and complete qualified local legal review before enrolment or on-site activity involving children.
+The curriculum and safeguarding framework are working drafts. Liberland is a civics case study, not a political belief test. Learners are invited to compare evidence and viewpoints, including liberty, voluntary cooperation, markets, public services and commons. No learner is expected to adopt a political position. Students help choose inquiry questions, roles, evidence formats and programme improvements; adults remain responsible for shared outcomes and safety.
 
-Liberland's official Constitution page says the Constitution is being drafted. Teach current text, proposals and learning simulations as distinct things. Source: https://liberland.org/constitution.
+The Academy is enrichment, not an accredited school or qualification. The 32-lesson count is a proposed planning baseline, not a completed set of lesson guides. The safeguarding page is not an approved policy and does not establish readiness to receive minors. Complete local legal and safeguarding review before enrolment or on-site activity involving children.
 
-## Project files
+## Publishing
 
-- `index.html`: main static website; no build step.
-- `curriculum.html`: lesson-based public curriculum overview.
-- `safeguarding.html`: public safeguarding framework draft.
-
-GitHub Pages is configured to publish from the `main` branch root. Keep changes intended for the live site on `main`.
+As of 23 November 2026, the live homepage matched the `gh-pages` branch while `main` contained the newer multi-page source. The homepage and supporting pages are being mirrored on both branches until the repository's GitHub Pages source is confirmed and consolidated in repository settings. Do not assume that a commit to `main` has reached the public site.
