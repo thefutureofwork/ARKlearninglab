@@ -1,23 +1,22 @@
-# Liberland Academy
+# ARK Learning Lab
 
-Public site for **Liberland Academy**, with **UnSchool** and **LIBERVERSE Learning Lab** pathways, a practical-skills strand, the Science & Civics Pack and the ARK Learning Lab pilot.
+Public site for **ARK Learning Lab**, with three pathways: **Core Academy**, **UnSchool**, and **LIBERVERSE Learning Lab**. The programme includes a proposed Science & Civics Pack, a practical-skills strand, and a draft ARK River Pilot.
 
 ## Public pages
 
-- [Home](https://thefutureofwork.github.io/liberlandacademy/): welcoming, audience-first overview, learner partnership, practical skills, draft packages and a balanced civics introduction.
-- [About Liberland](https://thefutureofwork.github.io/liberlandacademy/about.html): plain facts, both sides of the territorial dispute, and why it is used as one case study.
-- [Curriculum framework](https://thefutureofwork.github.io/liberlandacademy/curriculum.html): colour-coded pathway comparison, proposed 32-lesson map, learner choice, microstates comparison and age progression.
-- [LIBERVERSE](https://thefutureofwork.github.io/liberlandacademy/liberverse.html), [Learning plans](https://thefutureofwork.github.io/liberlandacademy/plans.html), [Mentors](https://thefutureofwork.github.io/liberlandacademy/mentors.html), [Pricing](https://thefutureofwork.github.io/liberlandacademy/pricing.html).
-- [Safeguarding framework](https://thefutureofwork.github.io/liberlandacademy/safeguarding.html): named lead, interim LinkedIn contact, proposed commitments and pre-launch gates.
+- [Home](https://thefutureofwork.github.io/liberlandacademy/): plain-language introduction, pathways, learning cycle, formats, current programme status and clear next steps.
+- [About](https://thefutureofwork.github.io/liberlandacademy/about.html): what Liberland is, the contested territorial context and why it is one optional case study.
+- [Curriculum framework](https://thefutureofwork.github.io/liberlandacademy/curriculum.html): pathway comparison, proposed 32-lesson map, learner choice, portable core and age progression.
+- [LIBERVERSE](https://thefutureofwork.github.io/liberlandacademy/liberverse.html), [Learning plans](https://thefutureofwork.github.io/liberlandacademy/plans.html), [Mentors](https://thefutureofwork.github.io/liberlandacademy/mentors.html), [Pricing](https://thefutureofwork.github.io/liberlandacademy/pricing.html), and [Safeguarding](https://thefutureofwork.github.io/liberlandacademy/safeguarding.html).
 
 ## Status and philosophy
 
-The curriculum and safeguarding framework are working drafts. Liberland is a civics case study, not a political belief test. Learners are invited to compare evidence and viewpoints, including liberty, voluntary cooperation, markets, public services and commons. No learner is expected to adopt a political position. Students help choose inquiry questions, roles, evidence formats and programme improvements; adults remain responsible for shared outcomes and safety.
+ARK Learning Lab is a draft enrichment programme for ages 6–18, not an accredited school, qualification or official Liberland government institution. Enrolment, payments and ARK Village visits are not open. Draft pricing is not an offer for sale. Complete curriculum materials, approved safeguarding arrangements and local legal review are required before enrolment or activities with minors.
 
-The Academy is enrichment, not an accredited school or qualification. The 32-lesson count is a proposed planning baseline, not a completed set of lesson guides. The safeguarding page is not an approved policy and does not establish readiness to receive minors. Complete local legal and safeguarding review before enrolment or on-site activity involving children.
+Learners can choose inquiry questions, roles and evidence formats. Liberland is an optional civics case study, not a political belief test. The official Liberland Constitution page says the Constitution is being drafted; current text, proposals, claims and design choices are taught as distinct categories.
 
 ## Publishing
 
-As of 23 November 2026, the live site serves pages that exist only on `main` (for example `about.html`, `pricing.html`), so `main` is the publish source. `gh-pages` is a partial legacy copy (home, curriculum, safeguarding, style) kept in sync but not used for deployment; it can be deleted once the Pages setting is double-checked in Settings > Pages.
+The live site is served from the `main` branch at GitHub Pages. The `gh-pages` branch is a partial legacy copy and is not the deployment source; verify the Pages setting before removing it. The public CDN may cache a recent commit for several minutes. To check a fresh deploy, add a query string to a page URL.
 
-The public CDN can serve a cached copy for a few minutes after a commit. To check a fresh deploy, add a query string, e.g. `index.html?v=1`.
+The intended custom domain, `ArkLearningLab.com`, did not resolve when last checked. Keep GitHub Pages as the canonical address until DNS and the GitHub Pages custom-domain setting are confirmed.
