@@ -3,3 +3,25 @@
 .tier{color:var(--ink)}.tier h3,.tier .price,.tier .per,.tier li{color:var(--ink)}.tier .seats{color:var(--river)}.tier.hl .seats{color:oklch(.32 .07 95)}.tier.hl{border-color:var(--sun)}.buy h2{color:var(--onink)}.buy .callout{background:oklch(.95 .03 92 / .1);border-left-color:var(--sun);color:var(--onink)}.buy .callout strong{color:var(--onink)}.buy .callout p{color:var(--onink-2)}.buy .smallprint,.buy .note{color:var(--onink-2)}.where{background:oklch(.3 .065 140)}.where p,.where .notthere{color:var(--onink)}.notthere{background:oklch(.95 .03 92 / .12)}header.top .callout{background:var(--paper);border-left-color:var(--ink)}header.top .callout p{color:var(--ink-2)}
 /* New ARK Learning Lab homepage: white status cards sit in the dark status section. */
 .buy .card{color:var(--ink)}
+/* Print pass: keep the format section high-contrast, full-width and comfortable to read on paper. */
+@media print{
+  @page{margin:16mm}
+  html,body{background:#fff!important;color:#111!important;font-size:12pt!important;line-height:1.45!important}
+  body *{box-shadow:none!important;text-shadow:none!important}
+  nav,footer,.noprint{display:none!important}
+  header.top,.where,.buy,.agency-bridge{background:#fff!important;color:#111!important}
+  header.top .eyebrow,.where .eyebrow,.where h2,.where p,.where a,.buy .eyebrow,.buy h2,.buy p,.buy a,.agency-bridge,.agency-bridge p,.agency-bridge h3,.agency-bridge a{color:#111!important}
+  .where,.buy,.agency-bridge,.callout,.card{border-color:#777!important}
+  .where a,.buy a{ text-decoration:underline!important }
+  .wrap{max-width:none!important;padding-left:0!important;padding-right:0!important}
+  .section{padding:18px 0!important}
+  .format-grid{grid-template-columns:1fr!important;gap:10px!important;margin-top:14px!important}
+  .format-grid .card{padding:12px 14px!important;border:1px solid #777!important;border-radius:0!important;break-inside:avoid;page-break-inside:avoid}
+  .format-grid .card p{font-size:11pt!important;line-height:1.45!important;color:#111!important}
+  .format-grid .micro-label{font-size:10pt!important;color:#333!important}
+  .format-grid h3{font-size:16pt!important;margin-top:3px!important}
+  #format .callout.warn{background:#fff!important;color:#111!important;border:1px solid #777!important;border-left:5px solid #111!important;padding:12px 14px!important;break-inside:avoid;page-break-inside:avoid}
+  #format .callout.warn strong,#format .callout.warn p{color:#111!important}
+  h1,h2,h3,h4{break-after:avoid;page-break-after:avoid}
+  article,.callout{break-inside:avoid;page-break-inside:avoid}
+}
