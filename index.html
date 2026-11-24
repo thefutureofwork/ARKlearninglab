@@ -5,17 +5,31 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ARK Learning Lab | Build knowledge. Make work worth showing.</title>
 <meta name="description" content="A draft enrichment programme for ages 6–18. Build knowledge through guided lessons, learner-chosen projects and a portfolio of evidence.">
-<link rel="canonical" href="https://thefutureofwork.github.io/liberlandacademy/">
+<link rel="canonical" href="https://thefutureofwork.github.io/ARKlearninglab/">
 <meta property="og:title" content="ARK Learning Lab | Build knowledge. Make work worth showing.">
 <meta property="og:description" content="Structured learning, real projects and room to choose. See the draft pathways, workload and current readiness.">
-<meta property="og:url" content="https://thefutureofwork.github.io/liberlandacademy/">
+<meta property="og:url" content="https://thefutureofwork.github.io/ARKlearninglab/">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;700&family=Hind:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
 .home-hero{max-width:1000px}.home-hero .lead{max-width:860px}.proof-grid,.audience-grid,.path-grid,.format-grid,.readiness-grid,.price-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:24px}.audience-grid,.proof-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.path-grid .card,.proof-grid .card,.audience-grid .card,.format-grid .card,.readiness-grid .card,.price-grid .card{height:100%}.micro-label{font:500 14px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--river)}.path-grid h3,.proof-grid h3,.audience-grid h3,.format-grid h3,.readiness-grid h3,.price-grid h3{margin-top:6px}.example{border:2px solid var(--river);padding:22px;background:white;border-radius:8px;margin-top:24px}.example ol{margin:14px 0 0;padding-left:24px;display:grid;gap:9px}.example .caveat{font-size:16px;color:var(--ink-2);margin:12px 0 0}.route-meta{font:500 15px var(--mono);color:var(--river);text-transform:uppercase;letter-spacing:.05em;margin-top:14px}.clear-banner{max-width:none}.price-grid .price{font:700 38px/1.1 var(--display);margin-top:10px}.status-card{border-top:5px solid var(--ink)}.status-card h3{margin:6px 0}.agency-bridge{padding:24px;border-radius:8px;background:var(--ink);color:var(--onink);margin-top:24px}.agency-bridge h3{color:var(--sun)}.agency-bridge p{color:var(--onink-2)}.agency-bridge a{color:var(--sun)}.stage-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}.stage-row article{padding:16px;border:1px solid oklch(.95 .03 92 / .35);border-radius:6px}.stage-row b{display:block;color:var(--sun);font-family:var(--display);font-size:19px}.faq-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:22px}.faq-grid details{max-width:none;margin:0}.faq-grid details p{margin:0 0 14px;color:var(--ink-2)}.final-cta{padding:30px;background:var(--sun);border-radius:8px;margin-top:24px}.final-cta .ctas{margin-top:16px}.final-cta p{max-width:760px}
-@media(max-width:900px){.path-grid,.format-grid,.readiness-grid,.price-grid{grid-template-columns:1fr 1fr}.stage-row{grid-template-columns:1fr}}
+#skills .skill-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px;margin-top:24px}
+#skills .skill-card{min-height:210px;padding:20px;background:#fff;border:1px solid var(--rule);border-top:4px solid var(--river);border-radius:6px;display:flex;flex-direction:column;gap:10px}
+#skills .skill-card h3{font-size:21px}
+#skills .skill-card .skill-task{font-size:18px;line-height:1.35}
+#skills .skill-card .skill-domain{margin-top:auto;font:500 13px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--river)}
+#skills .skill-band{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+#skills .skill-band button{min-height:44px;padding:8px 14px;background:#fff;border:1px solid var(--rule);border-radius:4px;color:var(--ink);font:500 16px var(--sans);cursor:pointer}
+#skills .skill-band button[aria-pressed=true]{background:var(--sun);border-color:var(--ink)}
+#skills .skill-band button:focus-visible{outline:3px solid var(--river);outline-offset:2px}
+#skills .skill-safety{margin-top:24px;padding:20px 24px;border-left:6px solid var(--river);background:var(--wash);border-radius:0 6px 6px 0}
+#skills .skill-safety strong{font:700 20px var(--display)}
+#skills .skill-safety p{margin:6px 0 0}
+@media(max-width:960px){.path-grid,.format-grid,.readiness-grid,.price-grid{grid-template-columns:1fr 1fr}.stage-row{grid-template-columns:1fr}#skills .skill-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:700px){#skills .skill-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.proof-grid,.audience-grid,.path-grid,.format-grid,.readiness-grid,.price-grid,.faq-grid{grid-template-columns:1fr}.home-hero{padding-top:32px}.example{padding:18px}}
+@media(max-width:500px){#skills .skill-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -23,7 +37,7 @@
 <header class="top">
 <nav aria-label="Main navigation">
 <a class="brand" href="./" aria-label="ARK Learning Lab home">ARK Learning Lab</a>
-<div class="links"><a href="#outcomes">Outcomes</a><a href="#pathways">Pathways</a><a href="#format">Format</a><a href="curriculum.html">Curriculum</a><a href="continuums.html">Learner agency</a><a href="pricing.html">Draft pricing</a></div>
+<div class="links"><a href="#outcomes">Outcomes</a><a href="#pathways">Pathways</a><a href="#skills">Practical skills</a><a href="#format">Format</a><a href="curriculum.html">Curriculum</a><a href="continuums.html">Learner agency</a><a href="pricing.html">Draft pricing</a></div>
 </nav>
 <div class="wrap hero home-hero">
 <p class="eyebrow">Ages 6–18 · flexible enrichment · programme in development</p>
@@ -76,6 +90,24 @@
 </div>
 <p class="note">No single route is a faster or more prestigious track. Learners can use shared outcomes and select an accessible way to demonstrate them.</p>
 </div></section>
+<section class="section wash" id="skills" aria-labelledby="skills-title"><div class="wrap">
+<p class="eyebrow">Practical independence skills</p><h2 id="skills-title">Hands that can fix, grow, cook and plan.</h2>
+<p class="intro">Ten practical skill families. Choose an age band to see an example task. These are previews, not complete lesson guides; each finished activity needs an outcome, materials, adult notes, learner choice and evidence.</p>
+<div class="skill-band" role="group" aria-label="Choose a learner age band"><button type="button" data-band="6-8" aria-pressed="false">Ages 6–8</button><button type="button" data-band="9-11" aria-pressed="true">Ages 9–11</button><button type="button" data-band="12-14" aria-pressed="false">Ages 12–14</button><button type="button" data-band="15-18" aria-pressed="false">Ages 15–18</button></div>
+<div class="skill-grid">
+<article class="skill-card"><h3>Repair &amp; mend</h3><p class="skill-task" data-6-8="Sew a button back on" data-9-11="Patch a bike inner tube" data-12-14="Diagnose a wobbly chair joint" data-15-18="Log, cost and fix a household fault">Patch a bike inner tube</p><p class="skill-domain">Design + materials</p></article>
+<article class="skill-card"><h3>Grow food</h3><p class="skill-task" data-6-8="Start a seedling and draw it weekly" data-9-11="Compare two soils in a fair test" data-12-14="Plan a raised bed by yield" data-15-18="Run a season trial with data">Compare two soils in a fair test</p><p class="skill-domain">Life science + measurement</p></article>
+<article class="skill-card"><h3>Cook &amp; store</h3><p class="skill-task" data-6-8="Make a no-heat snack safely" data-9-11="Plan a low-cost family meal" data-12-14="Cook with a food-safety checklist" data-15-18="Budget a week of meals for four">Plan a low-cost family meal</p><p class="skill-domain">Health + chemistry</p></article>
+<article class="skill-card"><h3>Water sense</h3><p class="skill-task" data-6-8="Track where water goes at home" data-9-11="Measure a tap’s daily use" data-12-14="Model a rain-catch system" data-15-18="Audit and cut a site’s water use">Measure a tap’s daily use</p><p class="skill-domain">Earth science + data</p></article>
+<article class="skill-card"><h3>First-aid aware</h3><p class="skill-task" data-6-8="Know when and how to call for help" data-9-11="Stock and explain a kit" data-12-14="Practise with a qualified instructor" data-15-18="Take a recognised first-aid course">Stock and explain a kit</p><p class="skill-domain">Health + communication</p></article>
+<article class="skill-card"><h3>Energy at home</h3><p class="skill-task" data-6-8="Spot what uses power" data-9-11="Read a meter for a week" data-12-14="Build a safe solar-oven model" data-15-18="Cost an efficiency upgrade">Read a meter for a week</p><p class="skill-domain">Physics + economics</p></article>
+<article class="skill-card"><h3>Find your way</h3><p class="skill-task" data-6-8="Draw a map of the route home" data-9-11="Use a compass on a set course" data-12-14="Plan a walk with a paper map" data-15-18="Lead a navigated route, supervised">Use a compass on a set course</p><p class="skill-domain">Geography + maths</p></article>
+<article class="skill-card"><h3>Be ready</h3><p class="skill-task" data-6-8="Learn the family meeting point" data-9-11="Build a household contact card" data-12-14="Draft a household emergency plan" data-15-18="Run a drill and improve the plan">Build a household contact card</p><p class="skill-domain">Civics + responsibility</p></article>
+<article class="skill-card"><h3>Money &amp; trade</h3><p class="skill-task" data-6-8="Save toward one goal" data-9-11="Compare prices per unit" data-12-14="Run a tiny stall and keep books" data-15-18="Write a simple business budget">Compare prices per unit</p><p class="skill-domain">Economics + maths</p></article>
+<article class="skill-card"><h3>Tool literacy</h3><p class="skill-task" data-6-8="Name and carry tools safely" data-9-11="Measure, mark and cut card" data-12-14="Build a small item with hand tools" data-15-18="Teach a low-risk skill to others">Measure, mark and cut card</p><p class="skill-domain">Engineering + safety</p></article>
+</div>
+<div class="skill-safety"><strong>Safety and supervision come first.</strong><p>First aid, food safety, fire and power tools require qualified instruction and appropriate adult supervision. Use safe, age-appropriate alternatives; no folk cures or unsafe shortcuts.</p></div>
+</div></section>
 <section class="section where" id="format" aria-labelledby="format-title"><div class="wrap">
 <p class="eyebrow">What the format actually is</p><h2 id="format-title">Print at home, study online or meet in your own pod.</h2>
 <div class="format-grid">
@@ -96,7 +128,7 @@
 <article><b>2 · Co-designed bridge</b><p>Learner and adult agree a goal, timeline and proof. Checkpoints make it visible when the learner is stuck or needs more instruction.</p></article>
 <article><b>3 · Learner-led work</b><p>The learner proposes a route, creates and revises the work, explains decisions and reflects on responsibility. Adults remain available and accountable.</p></article>
 </div>
-<p>These are design stages, not a fixed ladder, diagnosis or scored measure. Progress can vary by subject, task and moment. <a href="continuums.html">Explore the 7 Continuums framework</a>.</p>
+<p>These are design stages, not a fixed ladder, diagnosis or scored measure. Progress can vary by subject, task and moment. <a href="continuums.html#reflection">Open the private 7-dimension learner-agency check-in</a>. It supports reflection, not ranking; it does not save responses.</p>
 </div>
 </div></section>
 <section class="section" id="logistics" aria-labelledby="logistics-title"><div class="wrap">
@@ -139,6 +171,10 @@
 <div class="final-cta"><p class="micro-label">For families, learners and pod leaders</p><h3>Choose a question. Build the evidence. Explain the result.</h3><p>See the learning model and its limits before deciding whether ARK Learning Lab fits your learner.</p><div class="ctas"><a class="btn" href="curriculum.html">Explore curriculum</a><a class="btn line" href="pricing.html">Review draft pricing</a></div></div>
 </div></section>
 </main>
-<footer><div class="wrap"><div class="fl"><a href="./" aria-current="page">Home</a><a href="about.html">About</a><a href="curriculum.html">Curriculum</a><a href="liberverse.html">LIBERVERSE</a><a href="plans.html">Learning plans</a><a href="mentors.html">Mentors</a><a href="pricing.html">Draft pricing</a><a href="safeguarding.html">Safeguarding</a><a href="continuums.html">7 Continuums</a></div><p>ARK Learning Lab is a draft enrichment programme for ages 6–18, not an accredited school or qualification and not an official institution of the Liberland government. Enrolment, payment and ARK Village visits are not open. No student work or outcome claims are represented as real until a cohort has completed and appropriate permissions are in place.</p></div></footer>
+<footer><div class="wrap"><div class="fl"><a href="./" aria-current="page">Home</a><a href="about.html">About</a><a href="curriculum.html">Curriculum</a><a href="liberverse.html">LIBERVERSE</a><a href="plans.html">Learning plans</a><a href="mentors.html">Mentors</a><a href="pricing.html">Draft pricing</a><a href="safeguarding.html">Safeguarding</a><a href="continuums.html">7 Continuums</a><a href="#skills">Practical skills</a></div><p>ARK Learning Lab is a draft enrichment programme for ages 6–18, not an accredited school or qualification and not an official institution of the Liberland government. Enrolment, payment and ARK Village visits are not open. No student work or outcome claims are represented as real until a cohort has completed and appropriate permissions are in place.</p></div></footer>
+<script>
+const bandButtons=document.querySelectorAll('#skills [data-band]');
+bandButtons.forEach(button=>button.addEventListener('click',()=>{const band=button.getAttribute('data-band');bandButtons.forEach(b=>b.setAttribute('aria-pressed',String(b===button)));document.querySelectorAll('#skills .skill-task').forEach(task=>{const value=task.getAttribute('data-'+band);if(value)task.textContent=value})}));
+</script>
 </body>
 </html>
