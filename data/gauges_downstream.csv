@@ -1,0 +1,28 @@
+river,station,country,lat_approx,lon_approx,reach,min_m3s,mean_m3s,max_m3s,period,cited_basis
+Danube,Ulm,Germany,48.4,9.99,upper,6,38,153,1876-2010,"Danube multiannual station statistics (Wikipedia 'Danube', Discharge section)"
+Danube,Regensburg,Germany,49.02,12.1,upper,128,444,1330,1876-2010,as above
+Danube,Linz,Austria,48.31,14.29,upper,468,1451,4783,1876-2010,as above
+Danube,Vienna,Austria,48.21,16.37,upper,506,1917,6062,1876-2010,as above
+Danube,Bratislava,Slovakia,48.14,17.11,middle,633,2059,7324,1876-2010,as above
+Danube,Nagymaros/Szob,Hungary,47.79,18.95,middle,628,2333,7057,1876-2010,as above
+Danube,Bezdan/Batina (near Apatin),Serbia/Croatia,45.85,18.85,middle,749,2353,7043,1876-2010,as above
+Danube,Pancevo,Serbia,44.87,20.64,middle,1454,5310,13080,1876-2010,as above
+Danube,Orsova,Romania,44.72,22.4,lower,1672,5572,13324,1876-2010,as above
+Danube,Zimnicea/Svishtov,Romania/Bulgaria,43.65,25.36,lower,1411,6018,14510,1876-2010,as above
+Danube,Ceatal Izmail,Romania/Ukraine,45.22,28.72,delta,1889,6489,14673,1876-2010,as above
+Mississippi,St. Paul,USA (Minnesota),44.94,-93.09,upper,17.9,369,4800,1892-2024,USGS gauge statistics (Wikipedia 'Mississippi River' infobox)
+Mississippi,St. Louis,USA (Missouri),38.63,-90.18,middle,790,5680,31000,1933-2024,USGS gauge statistics (Wikipedia 'Mississippi River' infobox)
+Mississippi,Vicksburg,USA (Mississippi),32.35,-90.88,lower,4100,20910,66000,2008-2023 mean; min/max all record,USGS / USACE (Wikipedia 'Mississippi River' infobox)
+Mississippi,Baton Rouge,USA (Louisiana),30.45,-91.19,lower,4000,16570,41000,2004-2022,USGS (Wikipedia 'Mississippi River' infobox)
+Amazon,Tamshiyacu,Peru,-4.0,-73.16,upper,16400,31700,46700,long-term record,SO-HYBAM / ANA station statistics (Wikipedia 'Amazon River' infobox)
+Amazon,Manacapuru,Brazil,-3.31,-60.62,middle,58800,102600,139000,long-term record,as above
+Amazon,Obidos,Brazil,-1.92,-55.51,lower,71700,172100,241200,long-term record,as above
+Amazon,Santarem,Brazil,-2.44,-54.7,lower,76500,188600,271100,long-term record,as above
+Amazon,Delta (estimate),Brazil,-0.7,-50.09,delta,83400,223700,329500,long-term estimate,as above
+Mekong,Chiang Saen,Thailand,20.27,100.08,upper,,2700,,1960-2004,"Mekong River Commission, State of the Basin (Wikipedia 'Mekong' Table 2)"
+Mekong,Luang Prabang,Laos,19.89,102.14,upper,,3900,,1960-2004,as above
+Mekong,Vientiane,Laos,17.97,102.61,middle,,4400,,1960-2004,as above
+Mekong,Nakhon Phanom,Thailand,17.41,104.78,middle,,7100,,1960-2004,as above
+Mekong,Pakse,Laos,15.12,105.8,middle,,9700,,1960-2004,as above
+Mekong,Stung Treng,Cambodia,13.52,105.97,lower,,13100,,1960-2004,as above
+Mekong,Kratie,Cambodia,12.49,106.02,lower,,13200,,1960-2004,as above
