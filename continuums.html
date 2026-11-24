@@ -3,407 +3,117 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Explore the 7 Continuums of Learner Agency and reflect on a learner's current voice, choice, ownership and purpose.">
-<title>The 7 Continuums of Learner Agency | Liberland Academy</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;700&family=Hind:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<meta name="description" content="How ARK Learning Lab scaffolds learner voice, choice and ownership through supported steps, not a score or a sudden leap into self-direction.">
+<title>Learner Agency | ARK Learning Lab</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;700&family=Hind:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css">
 <style>
-.skip:focus{left:8px}
-header.top .hero{padding-top:46px;padding-bottom:52px}
-header.top h1{max-width:940px}
-.mode-switch{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
-.mode-switch .btn{min-height:46px}
-.mode-switch .btn[aria-pressed="true"]{background:var(--ink);color:var(--sun);box-shadow:0 0 0 2px var(--sun) inset}
-.mode-switch .btn[aria-pressed="false"]{background:transparent;color:var(--ink)}
-.mode-switch .btn[aria-pressed="false"]:hover{background:oklch(.2 .02 95 / .08)}
-#matrix-controls{padding:30px 0;background:var(--wash)}
-.control-heading{display:flex;justify-content:space-between;gap:16px;align-items:baseline;flex-wrap:wrap}
-.control-heading h2{font-size:clamp(24px,3vw,32px);margin:0}
-.filter-list{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
-.filter-pill{min-height:44px;padding:9px 14px;border:1px solid var(--rule);border-radius:4px;background:white;color:var(--ink);font:500 16px var(--sans);cursor:pointer}
-.filter-pill:hover{border-color:var(--river)}
-.filter-pill[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--sun)}
-.filter-pill .dot{display:inline-block;width:10px;height:10px;margin-right:8px;border-radius:50%;background:var(--river)}
-.filter-pill[data-stage="2"] .dot{background:var(--sun);border:1px solid var(--ink)}
-.filter-pill[data-stage="3"] .dot{background:var(--ink)}
-#explorer-dashboard{padding:32px 0;background:var(--ink);color:var(--onink)}
-.profile-panel{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:28px;align-items:center}
-.profile-panel .eyebrow{color:var(--sun)}
-.profile-panel h2{color:var(--onink);margin:8px 0 10px}
-.profile-panel p{color:var(--onink-2);margin:0}
-.profile-score{display:flex;align-items:center;gap:22px;padding:18px 20px;border:1px solid oklch(.95 .03 92 / .35);border-radius:6px}
-.profile-score strong{display:block;color:var(--sun);font:700 42px/1 var(--display);white-space:nowrap}
-.profile-score small{display:block;margin-top:8px;color:var(--onink-2);font:500 13px var(--mono);text-transform:uppercase;letter-spacing:.06em}
-.profile-actions{display:grid;gap:8px;min-width:170px}
-.profile-actions .btn{width:100%;font-size:16px}
-.profile-actions .btn.line{border-color:var(--onink);color:var(--onink)}
-#continuums-list{display:grid;gap:18px;padding-top:32px;padding-bottom:64px}
-.continuum-card{padding:24px;background:white;border:1px solid var(--rule);border-radius:6px;box-shadow:0 2px 8px oklch(.2 .02 95 / .04)}
-.continuum-head{display:flex;justify-content:space-between;align-items:center;gap:24px;padding-bottom:18px;margin-bottom:18px;border-bottom:1px solid var(--rule)}
-.continuum-title{display:flex;align-items:flex-start;gap:14px}
-.continuum-number{flex:0 0 auto;display:grid;place-items:center;width:46px;height:46px;background:var(--sun);border-radius:50%;color:var(--ink);font:700 18px var(--mono)}
-.continuum-title h2{font-size:clamp(23px,3vw,30px);margin:0}
-.continuum-title p{margin:6px 0 0;color:var(--ink-2);font-size:16px}
-.progress-box{min-width:210px;max-width:320px;width:30%}
-.progress-label{display:flex;justify-content:space-between;gap:8px;color:var(--ink-2);font:500 13px var(--mono);text-transform:uppercase;letter-spacing:.04em}
-.progress-track{height:8px;margin-top:8px;border-radius:8px;background:var(--wash);overflow:hidden}
-.progress-fill{height:100%;background:var(--river);transition:width .35s ease}
-.stage-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
-.stage-card{display:block;width:100%;min-height:160px;padding:17px 18px;text-align:left;background:white;color:var(--ink);border:1px solid var(--rule);border-top:4px solid var(--river);border-radius:4px;font:inherit;transition:opacity .2s,border-color .2s,box-shadow .2s,transform .2s}
-.stage-card.stage-2{border-top-color:var(--sun)}
-.stage-card.stage-3{border-top-color:var(--ink)}
-.stage-card.is-choice{cursor:pointer}
-.stage-card.is-choice:hover{transform:translateY(-2px);box-shadow:0 6px 18px oklch(.2 .02 95 / .1)}
-.stage-card.is-selected{box-shadow:0 0 0 3px var(--river);border-color:var(--river)}
-.stage-card.stage-2.is-selected{box-shadow:0 0 0 3px oklch(.32 .07 95);border-color:var(--sun)}
-.stage-card.stage-3.is-selected{box-shadow:0 0 0 3px var(--ink);border-color:var(--ink)}
-.stage-card.is-dimmed{opacity:.35}
-.stage-card:focus-visible{outline:3px solid var(--river);outline-offset:3px}
-.stage-kicker{display:flex;justify-content:space-between;align-items:center;gap:8px;font:500 13px var(--mono);letter-spacing:.05em;text-transform:uppercase;color:var(--ink-2)}
-.stage-kicker .state{font-weight:700;color:var(--river)}
-.stage-2 .stage-kicker .state{color:oklch(.32 .07 95)}
-.stage-3 .stage-kicker .state{color:var(--ink)}
-.stage-card h3{font-size:23px;margin:18px 0 8px}
-.stage-card p{margin:0;color:var(--ink-2);font-size:17px;line-height:1.5}
-#toast{position:fixed;right:20px;bottom:20px;z-index:10;max-width:min(420px,calc(100vw - 40px));padding:14px 18px;background:var(--ink);color:var(--onink);border-left:5px solid var(--sun);box-shadow:0 8px 28px oklch(.2 .02 95 / .2);opacity:0;transform:translateY(18px);pointer-events:none;transition:opacity .2s,transform .2s}
-#toast.is-visible{opacity:1;transform:translateY(0)}
-#toast[hidden]{display:none}
-footer .fl a[aria-current="page"]{text-decoration-thickness:3px;text-underline-offset:5px}
-@media(max-width:760px){.profile-panel{grid-template-columns:1fr}.profile-score{justify-content:space-between}.continuum-head{align-items:flex-start;flex-direction:column}.progress-box{width:100%;max-width:none}.stage-grid{grid-template-columns:1fr}.stage-card{min-height:0}.stage-card h3{margin-top:12px}}
-@media(max-width:560px){header.top .hero{padding-top:30px;padding-bottom:38px}.continuum-card{padding:18px}.profile-score{align-items:flex-start;flex-direction:column}.profile-actions{width:100%}.filter-pill{width:100%;text-align:left}.filter-list{display:grid;grid-template-columns:1fr}#continuums-list{padding-top:22px;padding-bottom:44px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important}}
+.agency-hero{max-width:980px}.stage-grid,.dimension-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:24px}.stage-card,.dimension-card{padding:20px;background:#fff;border:1px solid var(--rule);border-radius:7px}.stage-card{border-top:5px solid var(--river)}.stage-card:nth-child(2){border-top-color:var(--sun)}.stage-card:nth-child(3){border-top-color:var(--ink)}.stage-card .kicker,.dimension-card .kicker{font:500 14px var(--mono);letter-spacing:.07em;text-transform:uppercase;color:var(--river)}.stage-card h3,.dimension-card h3{margin-top:6px}.dimension-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.dimension-card{padding:20px}.dimension-card p{margin:8px 0 0;color:var(--ink-2);font-size:17px}.reflect{background:var(--ink);color:var(--onink);padding:26px;border-radius:8px;margin-top:24px}.reflect h3{color:var(--sun)}.reflect>p{color:var(--onink-2)}.reflect-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:20px}.reflect-item{padding:15px;border:1px solid oklch(.95 .03 92 / .3);border-radius:6px}.reflect-item h4{color:var(--onink);font-size:19px}.reflect-options{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}.reflect-options button{min-height:42px;padding:8px 12px;border:1px solid oklch(.95 .03 92 / .45);border-radius:4px;background:transparent;color:var(--onink);font:500 15px var(--sans);cursor:pointer}.reflect-options button[aria-pressed=true]{background:var(--sun);border-color:var(--sun);color:var(--ink)}.reflect-options button:focus-visible{outline:3px solid var(--sun);outline-offset:2px}.reflect-output{margin-top:18px;padding:16px;border-radius:6px;background:oklch(.95 .03 92 / .1)}.reflect-output p{margin:0;color:var(--onink-2)}.reflect-output strong{color:var(--sun)}.reflect-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}.reflect-actions button{min-height:44px;padding:10px 14px;border:1px solid var(--onink);border-radius:4px;background:transparent;color:var(--onink);font:500 16px var(--sans);cursor:pointer}.note-banner{margin-top:18px;padding:16px 20px;border-left:5px solid var(--river);background:var(--wash);border-radius:0 6px 6px 0}.note-banner p{margin:4px 0 0;color:var(--ink-2)}
+@media(max-width:860px){.stage-grid{grid-template-columns:1fr}.dimension-grid,.reflect-grid{grid-template-columns:1fr}}
+@media(max-width:600px){.agency-hero{padding-top:32px}.stage-card,.dimension-card{padding:18px}}
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <header class="top">
-<nav aria-label="Main">
-<a class="brand" href="./">Liberland Academy</a>
-<div class="links">
-<a href="./">Home</a><a href="about.html">About Liberland</a><a href="curriculum.html">Curriculum</a><a href="liberverse.html">LIBERVERSE</a><a href="plans.html">Learning plans</a><a href="continuums.html" aria-current="page">7 Continuums</a><a href="mentors.html">Mentors</a><a href="pricing.html">Pricing</a><a href="safeguarding.html">Safeguarding</a>
-</div>
+<nav aria-label="Main navigation">
+<a class="brand" href="./" aria-label="ARK Learning Lab home">ARK Learning Lab</a>
+<div class="links"><a href="./">Home</a><a href="curriculum.html">Curriculum</a><a href="liberverse.html">LIBERVERSE</a><a href="plans.html">Learning plans</a><a href="pricing.html">Draft pricing</a><a href="safeguarding.html">Safety</a></div>
 </nav>
-<div class="wrap hero">
-<p class="eyebrow">Liberland Academy · Learning framework</p>
+<div class="wrap hero agency-hero">
+<p class="eyebrow">Learning design · ages 6–18</p>
 <h1>The 7 Continuums of Learner Agency</h1>
-<p class="lead">A practical map from teacher-directed instruction to autonomous, purpose-driven learning. Compare the stages, then use the self-check to reflect on where a learner is today.</p>
-<p class="note">Content by Kathleen McClaskey and Katherine Tosi</p>
-<div class="mode-switch" role="group" aria-label="Choose a view">
-<button id="btn-matrix" type="button" class="btn" aria-pressed="true" onclick="setMode('matrix')">Explore the matrix</button>
-<button id="btn-explorer" type="button" class="btn line" aria-pressed="false" onclick="setMode('explorer')">Take the agency self-check</button>
-</div>
+<p class="lead">A way to think about how a learner’s voice, choices and ownership can grow over time. At ARK Learning Lab, self-direction is coached: clear teaching and adult support remain while learners take on more decisions.</p>
+<p class="status">Reflection framework · not a diagnostic or validated assessment</p>
+<div class="ctas"><a class="btn" href="#bridge">See the supported bridge</a><a class="btn line" href="#dimensions">Explore the seven dimensions</a><a class="btn line" href="#reflection">Use the reflection prompts</a></div>
 </div>
 </header>
 <main id="main">
-<section id="matrix-controls" aria-labelledby="matrix-title">
-<div class="wrap">
-<div class="control-heading"><div><p class="eyebrow">Compare by stage</p><h2 id="matrix-title">Highlight a learning role</h2></div><p class="note">The same continuum, seen from three vantage points.</p></div>
-<div class="filter-list" role="group" aria-label="Highlight a stage">
-<button type="button" onclick="setStageFilter('all')" id="filter-all" class="filter-pill" aria-pressed="true">All stages</button>
-<button type="button" onclick="setStageFilter(1)" id="filter-1" class="filter-pill" data-stage="1" aria-pressed="false"><span class="dot" aria-hidden="true"></span>Stage 1 · Teacher-centered</button>
-<button type="button" onclick="setStageFilter(2)" id="filter-2" class="filter-pill" data-stage="2" aria-pressed="false"><span class="dot" aria-hidden="true"></span>Stage 2 · Learner-centered</button>
-<button type="button" onclick="setStageFilter(3)" id="filter-3" class="filter-pill" data-stage="3" aria-pressed="false"><span class="dot" aria-hidden="true"></span>Stage 3 · Learner-driven</button>
+<section class="section" id="bridge"><div class="wrap">
+<p class="eyebrow">Structured self-direction</p><h2>Stage 2 is the bridge, not the deep end.</h2>
+<p class="intro">Learners do not need to arrive already independent. Adults teach essential knowledge, help agree a meaningful goal and make success criteria visible. Choices and responsibility expand as the learner practises and shows readiness.</p>
+<div class="stage-grid">
+<article class="stage-card"><p class="kicker">Stage 1 · Guided foundation</p><h3>Learn with clear structure</h3><p>Adults introduce core ideas, model the task and set a clear purpose. Learners practise routines and make manageable choices with support.</p></article>
+<article class="stage-card"><p class="kicker">Stage 2 · Co-designed bridge</p><h3>Plan the work together</h3><p>Learner and adult agree the question, timeline, evidence and checkpoints. The mentor teaches or adds scaffolds when the work shows a gap.</p></article>
+<article class="stage-card"><p class="kicker">Stage 3 · Learner-led work</p><h3>Take meaningful ownership</h3><p>The learner proposes a route, builds and revises the work, explains decisions and reflects on responsibility. Adults remain available and accountable.</p></article>
 </div>
+<div class="note-banner"><strong>Not a one-way ladder.</strong><p>A learner can lead in one area and want more guidance in another. Needs change with the task, subject, experience and circumstances. The goal is appropriate support and real learning, not a stage label.</p></div>
+</div></section>
+<section class="section wash"><div class="wrap">
+<p class="eyebrow">What families can expect</p><h2>Choice with checkpoints.</h2>
+<div class="grid3">
+<article class="card"><h3>Core knowledge is taught</h3><p>Projects do not replace explicit instruction, guided practice or checks for understanding.</p></article>
+<article class="card"><h3>Goals and evidence are agreed</h3><p>A learner’s question is connected to shared outcomes. The work and what counts as evidence are made clear before a project begins.</p></article>
+<article class="card"><h3>Adults keep responsibility</h3><p>Teachers, mentors and guardians retain responsibility for teaching, supervision, safety, access and lawful operation.</p></article>
 </div>
-</section>
-<section id="explorer-dashboard" hidden aria-labelledby="profile-title">
-<div class="wrap profile-panel">
-<div><p class="eyebrow">Interactive learner agency profile</p><h2 id="profile-title">Co-Designed Learner (Learner-Centered)</h2><p id="profile-desc">Select a stage across the seven continuums to map learning autonomy and create a growth snapshot. This is a reflection prompt, not a score of a learner's worth or ability.</p></div>
-<div class="profile-score"><div><strong id="agency-score">14 / 21</strong><small>Agency index</small></div><div class="profile-actions"><button type="button" class="btn" onclick="setAllStages(3)">Set all to learner-driven</button><button type="button" class="btn line" onclick="copySummary()">Copy profile report</button></div></div>
+<p class="note">The Academy and UnSchool curriculum drafts describe common outcomes with different scaffolding, pacing and project choice. <a href="curriculum.html#pathways">Compare the pathways</a>.</p>
+</div></section>
+<section class="section" id="dimensions"><div class="wrap">
+<p class="eyebrow">Seven dimensions · different ways agency can show up</p><h2>Not one score. Seven useful conversations.</h2>
+<p class="intro">The framework looks at separate dimensions of learning. A learner’s pattern may be mixed. Use these descriptions to discuss support and next steps, not to rank learners.</p>
+<div class="dimension-grid">
+<article class="dimension-card"><p class="kicker">01 · Voice</p><h3>From expression to leadership</h3><p>Can the learner share ideas, influence how learning happens and communicate a perspective to others?</p></article>
+<article class="dimension-card"><p class="kicker">02 · Choice</p><h3>From options to autonomy</h3><p>Does the learner select from clear options, customize a route or propose a project of their own?</p></article>
+<article class="dimension-card"><p class="kicker">03 · Engagement</p><h3>From participation to inquiry</h3><p>Is the learner completing a guided task, investing in a co-designed goal or pursuing a sustained question?</p></article>
+<article class="dimension-card"><p class="kicker">04 · Motivation</p><h3>From external prompts to purpose</h3><p>What is helping the learner persist: structure, curiosity, growing mastery or a purpose they can explain?</p></article>
+<article class="dimension-card"><p class="kicker">05 · Ownership</p><h3>From adult monitoring to shared responsibility</h3><p>Who sets milestones, checks evidence and decides what the next step should be?</p></article>
+<article class="dimension-card"><p class="kicker">06 · Purpose</p><h3>From assigned objectives to connected work</h3><p>Can the learner connect a learning goal to an interest, a practical use or a problem that matters to someone?</p></article>
+<article class="dimension-card"><p class="kicker">07 · Self-efficacy</p><h3>From dependence to growing confidence</h3><p>What practice, feedback or scaffold will help the learner try a harder step with appropriate support?</p></article>
 </div>
-</section>
-<section class="wrap" aria-label="The seven learner agency continuums"><div id="continuums-list"></div></section>
+<p class="note">Framework content by Kathleen McClaskey and Katherine Tosi. The labels are prompts for reflection, not a clinical, psychometric or attainment measure.</p>
+</div></section>
+<section class="section wash" id="reflection"><div class="wrap">
+<p class="eyebrow">Reflect, don’t score</p><h2>Where could support shift next?</h2>
+<p class="intro">Pick a description for any dimension you want to discuss. The page will not calculate a total, label a learner or save responses. Use it to name one practical next step together.</p>
+<div class="reflect" aria-live="polite">
+<h3>Private reflection prompt</h3>
+<p>Select a stage in one or more dimensions, then choose one small next step. Your selections stay in this browser page only.</p>
+<div class="reflect-grid" id="reflect-grid"></div>
+<div class="reflect-output"><p id="reflect-summary"><strong>No stages selected.</strong> Start with the kind of support that would help in the learner’s current task.</p></div>
+<div class="reflect-actions"><button type="button" id="clear-reflection">Clear selections</button><button type="button" id="copy-reflection">Copy reflection notes</button></div>
+<p id="reflect-status" role="status"></p>
+</div>
+</div></section>
+<section class="section" id="application"><div class="wrap">
+<p class="eyebrow">How this connects to the programme</p><h2>Make a route visible, then let learners shape it.</h2>
+<p class="intro">In a draft UnSchool project, a learner might start with a question about water use, garden soil or digital privacy. The adult and learner agree the learning goal, evidence and check-in points. The learner chooses the role and presentation format, builds an artifact and explains what changed after feedback.</p>
+<div class="ctas"><a class="btn" href="./#outcomes">See the sample portfolio outcomes</a><a class="btn line" href="plans.html">Open the learning-plan guide</a><a class="btn line" href="curriculum.html#pathways">Compare programme routes</a></div>
+<p class="note">ARK Learning Lab is in development and not open for enrolment. No actual cohort work or learner result is represented on this page.</p>
+</div></section>
 </main>
-<div id="toast" role="status" aria-live="polite" hidden>Profile copied to clipboard.</div>
-<footer><div class="wrap"><div class="fl"><a href="./">Home</a><a href="about.html">About Liberland</a><a href="curriculum.html">Curriculum</a><a href="liberverse.html">LIBERVERSE</a><a href="plans.html">Learning plans</a><a href="continuums.html" aria-current="page">7 Continuums</a><a href="mentors.html">Mentors</a><a href="pricing.html">Pricing</a><a href="safeguarding.html">Safeguarding</a></div><p>Liberland Academy is a draft education programme. It is not an accredited school and not an official institution of the Liberland government.</p></div></footer>
+<footer><div class="wrap"><div class="fl"><a href="./">Home</a><a href="about.html">About</a><a href="curriculum.html">Curriculum</a><a href="liberverse.html">LIBERVERSE</a><a href="plans.html">Learning plans</a><a href="mentors.html">Mentors</a><a href="pricing.html">Draft pricing</a><a href="safeguarding.html">Safety</a><a href="continuums.html" aria-current="page">Learner agency</a></div><p>ARK Learning Lab is a draft enrichment programme, not an accredited school or qualification and not an official institution of the Liberland government. The reflection prompts are not a validated assessment or diagnostic tool.</p></div></footer>
 <script>
-const continuumsData = [
-      {
-        id: 'voice',
-        number: '01',
-        title: 'Continuum of Voice',
-        subtitle: 'From expressing prompted ideas to sharing an authentic voice with the world',
-        stages: [
-          {
-            stage: 1,
-            name: 'Expression',
-            role: 'Teacher-Centered',
-            description: 'Learners express opinions and ideas on topics chosen by the teacher.'
-          },
-          {
-            stage: 2,
-            name: 'Consultation',
-            role: 'Learner-Centered',
-            description: 'Learners share opinions on how they learn best and are consulted on learning activities.'
-          },
-          {
-            stage: 3,
-            name: 'Leadership',
-            role: 'Learner-Driven',
-            description: 'Learners write their own learning story, direct their learning path, and share their voice with the world.'
-          }
-        ]
-      },
-      {
-        id: 'choice',
-        number: '02',
-        title: 'Continuum of Choice',
-        subtitle: 'From selecting prescribed options to pitching self-designed proposals',
-        stages: [
-          {
-            stage: 1,
-            name: 'Options',
-            role: 'Teacher-Centered',
-            description: 'Learners choose from a menu of options provided by the teacher for assignments and tasks.'
-          },
-          {
-            stage: 2,
-            name: 'Customization',
-            role: 'Learner-Centered',
-            description: 'Learners select tools, strategies, and resources to customize how they demonstrate understanding.'
-          },
-          {
-            stage: 3,
-            name: 'Autonomy',
-            role: 'Learner-Driven',
-            description: 'Learners define their own goals, choose their tools and methods, and pitch their project proposals.'
-          }
-        ]
-      },
-      {
-        id: 'engagement',
-        number: '03',
-        title: 'Continuum of Engagement',
-        subtitle: 'From task compliance to passionate, self-directed inquiry',
-        stages: [
-          {
-            stage: 1,
-            name: 'Compliant',
-            role: 'Teacher-Centered',
-            description: 'Learners complete tasks and assignments to meet teacher expectations and requirements.'
-          },
-          {
-            stage: 2,
-            name: 'Committed',
-            role: 'Learner-Centered',
-            description: 'Learners are engaged and invested in their learning, setting goals and reflecting on progress.'
-          },
-          {
-            stage: 3,
-            name: 'Passionate',
-            role: 'Learner-Driven',
-            description: 'Learners follow their passions, take deep ownership, and dive into self-directed inquiry.'
-          }
-        ]
-      },
-      {
-        id: 'motivation',
-        number: '04',
-        title: 'Continuum of Motivation',
-        subtitle: 'From external rewards and grades to purposeful global impact',
-        stages: [
-          {
-            stage: 1,
-            name: 'Extrinsic',
-            role: 'Teacher-Centered',
-            description: 'Driven by external rewards, grades, points, compliance, or praise from the teacher.'
-          },
-          {
-            stage: 2,
-            name: 'Intrinsic',
-            role: 'Learner-Centered',
-            description: 'Driven by internal interest, curiosity, pride, and personal desire to build mastery.'
-          },
-          {
-            stage: 3,
-            name: 'Purpose Driven',
-            role: 'Learner-Driven',
-            description: 'Driven by a deep sense of purpose, core values, and the desire to make an impact on the world.'
-          }
-        ]
-      },
-      {
-        id: 'ownership',
-        number: '05',
-        title: 'Continuum of Ownership',
-        subtitle: 'From teacher-monitored evaluation to full sovereign responsibility',
-        stages: [
-          {
-            stage: 1,
-            name: 'External Control',
-            role: 'Teacher-Centered',
-            description: 'The teacher manages, monitors, tracks, and evaluates student progress and output.'
-          },
-          {
-            stage: 2,
-            name: 'Shared Responsibility',
-            role: 'Learner-Centered',
-            description: 'Learners monitor their own progress using rubrics, feedback, and self-assessment tools.'
-          },
-          {
-            stage: 3,
-            name: 'Full Agency',
-            role: 'Learner-Driven',
-            description: 'Learners take full responsibility for their learning path, setting their own milestones and evidence of growth.'
-          }
-        ]
-      },
-      {
-        id: 'purpose',
-        number: '06',
-        title: 'Continuum of Purpose',
-        subtitle: 'From prescribed curriculum objectives to solving real-world challenges',
-        stages: [
-          {
-            stage: 1,
-            name: 'Directed',
-            role: 'Teacher-Centered',
-            description: 'Purpose is decided by the teacher through prescribed curriculum objectives and tasks.'
-          },
-          {
-            stage: 2,
-            name: 'Connected',
-            role: 'Learner-Centered',
-            description: 'Learners connect learning activities to personal interests, future goals, and practical application.'
-          },
-          {
-            stage: 3,
-            name: 'Transformative',
-            role: 'Learner-Driven',
-            description: 'Purpose is driven by authentic, real-world problems, global issues, and societal contributions.'
-          }
-        ]
-      },
-      {
-        id: 'self-efficacy',
-        number: '07',
-        title: 'Continuum of Self-Efficacy',
-        subtitle: 'From reliance on external guidance to empowered, independent mastery',
-        stages: [
-          {
-            stage: 1,
-            name: 'Dependent',
-            role: 'Teacher-Centered',
-            description: 'Learner doubts their abilities and relies heavily on external encouragement and teacher guidance to proceed.'
-          },
-          {
-            stage: 2,
-            name: 'Emerging',
-            role: 'Learner-Centered',
-            description: 'Learner develops confidence through guided practice, reflection, and constructive feedback loops.'
-          },
-          {
-            stage: 3,
-            name: 'Empowered',
-            role: 'Learner-Driven',
-            description: 'Learner possesses a strong belief in their capacity to learn, adapt, solve complex problems, and succeed independently.'
-          }
-        ]
-      }
+const dimensions=[
+  {id:'voice',name:'Voice',stages:['Expression','Consultation','Leadership']},
+  {id:'choice',name:'Choice',stages:['Options','Customization','Autonomy']},
+  {id:'engagement',name:'Engagement',stages:['Compliant','Committed','Passionate inquiry']},
+  {id:'motivation',name:'Motivation',stages:['Extrinsic prompts','Intrinsic interest','Purpose-driven']},
+  {id:'ownership',name:'Ownership',stages:['External control','Shared responsibility','Full agency']},
+  {id:'purpose',name:'Purpose',stages:['Directed','Connected','Transformative']},
+  {id:'efficacy',name:'Self-efficacy',stages:['Dependent','Emerging','Empowered']}
 ];
-let currentMode = 'matrix';
-let stageFilter = 'all';
-let selectedStages = { voice: 2, choice: 2, engagement: 2, motivation: 2, ownership: 2, purpose: 2, 'self-efficacy': 2 };
-function setMode(mode) {
-  currentMode = mode;
-  const matrix = mode === 'matrix';
-  document.getElementById('btn-matrix').setAttribute('aria-pressed', String(matrix));
-  document.getElementById('btn-explorer').setAttribute('aria-pressed', String(!matrix));
-  document.getElementById('matrix-controls').hidden = !matrix;
-  document.getElementById('explorer-dashboard').hidden = matrix;
-  if (!matrix) updateScoreDashboard();
-  renderContinuums();
+const chosen={};
+const grid=document.getElementById('reflect-grid');
+const summary=document.getElementById('reflect-summary');
+function render(){
+  grid.innerHTML=dimensions.map(d=>'<div class="reflect-item"><h4>'+d.name+'</h4><div class="reflect-options">'+d.stages.map((s,i)=>'<button type="button" data-dimension="'+d.id+'" data-stage="'+(i+1)+'" aria-pressed="'+(chosen[d.id]===i+1)+'">'+s+'</button>').join('')+'</div></div>').join('');
+  grid.querySelectorAll('button').forEach(button=>button.addEventListener('click',()=>{
+    const id=button.dataset.dimension,stage=Number(button.dataset.stage);
+    if(chosen[id]===stage) delete chosen[id]; else chosen[id]=stage;
+    render();updateSummary();
+  }));
 }
-function setStageFilter(filter) {
-  stageFilter = filter;
-  document.querySelectorAll('.filter-pill').forEach(btn => btn.setAttribute('aria-pressed', String(btn.id === `filter-${filter}`)));
-  renderContinuums();
+function updateSummary(){
+  const rows=dimensions.filter(d=>chosen[d.id]).map(d=>d.name+': '+d.stages[chosen[d.id]-1]);
+  summary.innerHTML=rows.length?'<strong>Reflection notes, not a score:</strong> '+rows.join(' · ')+'<br><br><strong>Next question:</strong> What is one small scaffold or choice that would help the learner take the next step?':'<strong>No stages selected.</strong> Start with the kind of support that would help in the learner’s current task.';
 }
-function selectStageForContinuum(continuumId, stageNum) {
-  if (currentMode !== 'explorer') return;
-  selectedStages[continuumId] = stageNum;
-  updateScoreDashboard();
-  renderContinuums();
+function notes(){
+  const rows=dimensions.filter(d=>chosen[d.id]).map(d=>d.name+': '+d.stages[chosen[d.id]-1]);
+  return 'ARK LEARNING LAB · PRIVATE LEARNER-AGENCY REFLECTION\nNot a diagnostic or validated score.\n'+(rows.length?rows.join('\n'):'No stages selected.')+'\n\nNext question: What is one small scaffold or choice that would help the learner take the next step?';
 }
-function setAllStages(stageNum) {
-  Object.keys(selectedStages).forEach(key => selectedStages[key] = stageNum);
-  updateScoreDashboard();
-  renderContinuums();
-}
-function updateScoreDashboard() {
-  const total = Object.values(selectedStages).reduce((sum, val) => sum + val, 0);
-  document.getElementById('agency-score').textContent = `${total} / 21`;
-  const title = document.getElementById('profile-title');
-  const desc = document.getElementById('profile-desc');
-  if (total <= 10) {
-    title.textContent = 'Guided Foundation (Teacher-Centered)';
-    desc.textContent = 'Learning currently leans on structure, guided choices and external benchmarks. That is a useful starting point for building confidence and habits.';
-  } else if (total <= 16) {
-    title.textContent = 'Co-Designed Learner (Learner-Centered)';
-    desc.textContent = 'The learner is building agency through shared decisions, reflection, and links between study and personal goals.';
-  } else {
-    title.textContent = 'Learner-Driven';
-    desc.textContent = 'The learner is taking greater ownership of goals, methods and real-world inquiry. Keep adult support available as a partner, not a scorekeeper.';
-  }
-}
-function showToast(message) {
-  const toast = document.getElementById('toast');
-  toast.textContent = message;
-  toast.hidden = false;
-  requestAnimationFrame(() => toast.classList.add('is-visible'));
-  window.clearTimeout(showToast.timer);
-  showToast.timer = window.setTimeout(() => {
-    toast.classList.remove('is-visible');
-    window.setTimeout(() => toast.hidden = true, 220);
-  }, 2600);
-}
-async function copySummary() {
-  const total = Object.values(selectedStages).reduce((sum, val) => sum + val, 0);
-  const lines = ['LIBERLAND ACADEMY · LEARNER AGENCY PROFILE', `Agency Index: ${total} / 21`, ''];
-  continuumsData.forEach(item => {
-    const stage = item.stages.find(s => s.stage === selectedStages[item.id]);
-    lines.push(`${item.number}. ${item.title}: Stage ${stage.stage} · ${stage.name} (${stage.role})`);
-  });
-  lines.push('', 'Content by Kathleen McClaskey and Katherine Tosi');
-  try {
-    await navigator.clipboard.writeText(lines.join('\n'));
-    showToast('Profile report copied.');
-  } catch (error) {
-    const textarea = document.createElement('textarea');
-    textarea.value = lines.join('\n');
-    textarea.setAttribute('readonly', '');
-    textarea.style.position = 'fixed';
-    textarea.style.opacity = '0';
-    document.body.appendChild(textarea);
-    textarea.select();
-    const copied = document.execCommand('copy');
-    textarea.remove();
-    showToast(copied ? 'Profile report copied.' : 'Copy unavailable. Select and copy your profile manually.');
-  }
-}
-function renderContinuums() {
-  const container = document.getElementById('continuums-list');
-  container.innerHTML = continuumsData.map(item => {
-    const activeStage = selectedStages[item.id];
-    const fill = currentMode === 'explorer' ? `${((activeStage - 1) / 2) * 100}%` : '100%';
-    const stageCards = item.stages.map(stage => {
-      const selected = currentMode === 'explorer' && activeStage === stage.stage;
-      const dimmed = currentMode === 'matrix' && stageFilter !== 'all' && stageFilter !== stage.stage;
-      return `<button type="button" class="stage-card stage-${stage.stage}${selected ? ' is-selected' : ''}${dimmed ? ' is-dimmed' : ''}${currentMode === 'explorer' ? ' is-choice' : ''}" onclick="selectStageForContinuum('${item.id}', ${stage.stage})" aria-pressed="${selected}" ${currentMode !== 'explorer' ? 'disabled' : ''}>
-        <span class="stage-kicker"><span>Stage ${stage.stage} · ${stage.role}</span><span class="state">${selected ? 'Selected' : ''}</span></span>
-        <h3>${stage.name}</h3><p>${stage.description}</p>
-      </button>`;
-    }).join('');
-    return `<article class="continuum-card">
-      <div class="continuum-head"><div class="continuum-title"><span class="continuum-number">${item.number}</span><div><h2>${item.title}</h2><p>${item.subtitle}</p></div></div>
-      <div class="progress-box"><div class="progress-label"><span>${currentMode === 'explorer' ? `Selected stage ${activeStage}` : 'Three stages'}</span><span>${currentMode === 'explorer' ? `${activeStage} / 3` : '1 → 3'}</span></div><div class="progress-track" aria-hidden="true"><div class="progress-fill" style="width:${fill}"></div></div></div></div>
-      <div class="stage-grid">${stageCards}</div>
-    </article>`;
-  }).join('');
-}
-renderContinuums();
+document.getElementById('clear-reflection').addEventListener('click',()=>{Object.keys(chosen).forEach(k=>delete chosen[k]);render();updateSummary();document.getElementById('reflect-status').textContent='Selections cleared.';});
+document.getElementById('copy-reflection').addEventListener('click',async()=>{const status=document.getElementById('reflect-status');try{await navigator.clipboard.writeText(notes());status.textContent='Reflection notes copied. Nothing was saved to this site.';}catch(e){status.textContent=notes();}});
+render();
 </script>
 </body>
 </html>
