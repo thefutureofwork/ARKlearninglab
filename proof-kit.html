@@ -1,0 +1,52 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Proof Kit | ARK Learning Lab</title><meta name="description" content="A working prototype of LIBERVERSE portfolio credentials: parent consent, signed certificates, offline checks, revocation, replaceable keys and anonymous anchoring on Ethereum Sepolia."><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;700&family=Hind:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="proof-kit/kit.css"></head><body><a class="skip" href="#main">Skip to content</a><header class="top"><nav aria-label="Main"><a class="brand" href="./">ARK Learning Lab</a><div class="links"><a href="./">Home</a><a href="about.html">About Liberland</a><a href="curriculum.html">Curriculum</a><a href="liberverse.html">LIBERVERSE</a><a href="proof-kit.html" aria-current="page">Proof Kit</a><a href="plans.html">Learning plans</a><a href="mentors.html">Mentors</a><a href="pricing.html">Pricing</a><a href="safeguarding.html">Safeguarding</a></div></nav><div class="wrap hero"><p class="eyebrow">LIBERVERSE · Proof Kit · working prototype</p><h1>Prove the work. Keep the learner private.</h1><p class="lead">Sign a learner’s portfolio after parent consent, print a certificate anyone can check offline, revoke it if consent is withdrawn, and put only an anonymous fingerprint on Ethereum.</p><div class="callout"><strong>Prototype, not for real learners yet</strong><p>The starting signing key is public, so replace it under Keys before any real use. Ethereum Sepolia (a test network) stands in for Liberland Blockchain V2 until it launches. Files are fingerprinted in your browser and never uploaded; records stay in this browser.</p></div></div></header>
+<main id="main" class="pk"><section class="section"><div class="wrap">
+<div class="pk-tabs" role="tablist" aria-label="Proof Kit steps">
+<button type="button" class="pk-tab" role="tab" data-tab="sign" aria-selected="true"><span class="n">1</span><span><b>Sign</b><small>Six-point checklist</small></span></button>
+<button type="button" class="pk-tab" role="tab" data-tab="verify" aria-selected="false"><span class="n">2</span><span><b>Verify</b><small>Anyone, offline</small></span></button>
+<button type="button" class="pk-tab" role="tab" data-tab="keys" aria-selected="false"><span class="n">3</span><span><b>Keys</b><small>Revoke and replace</small></span></button>
+<button type="button" class="pk-tab" role="tab" data-tab="eth" aria-selected="false"><span class="n">4</span><span><b>Ethereum<span class="pk-count" id="eth-badge" hidden></span></b><small>Sepolia checklist</small></span></button>
+</div>
+
+<div class="pk-panel" id="tab-sign" role="tabpanel"><div class="pk-grid"><div>
+<h2>Signing checklist</h2>
+<div class="pk-progress"><span><i id="sign-bar"></i></span><b id="sign-count">0 of 6 done</b></div>
+<ol class="pk-check" id="sign-list">
+<li data-step="key"><span class="pk-dot">1</span><div><h3>Signing key ready</h3><p class="pk-hint" id="key-hint"></p><button type="button" class="pk-link" data-go="keys" id="key-go"></button></div></li>
+<li data-step="consent"><span class="pk-dot">2</span><div><h3>Parent or guardian consent</h3><p class="pk-hint">Recorded on paper. Only a reference is kept in this browser, and none of it goes in the credential.</p>
+<label class="pk-row"><input type="checkbox" id="consent"> <span>A parent or guardian signed ARK’s consent form for this credential.</span></label>
+<div class="pk-one"><label for="consent-ref">Consent form reference</label><input id="consent-ref" placeholder="CF-0031" autocomplete="off"></div>
+<div class="pk-optin"><input type="checkbox" id="anchor-ok"><label for="anchor-ok"><b>Also allow the anonymous fingerprint on Ethereum</b><br><span class="pk-hint">Off by default. If off, the credential still works but never joins a public batch.</span></label></div>
+</div></li>
+<li data-step="files"><span class="pk-dot">3</span><div><h3>Portfolio files fingerprinted</h3>
+<div class="pk-drop" id="drop"><p><b>Drop the portfolio bundle here</b><br><span class="pk-hint">Scans, maps, code, notes. Fingerprinted in this browser, never uploaded.</span></p><button type="button" class="btn line">Choose files</button><input type="file" multiple hidden></div>
+<ul id="file-list" aria-label="Files in this bundle"></ul></div></li>
+<li data-step="rubric"><span class="pk-dot">4</span><div><h3>Module and rubric</h3>
+<div class="pk-one"><label for="module">Module</label><select id="module"></select></div>
+<fieldset style="border:0;padding:0;margin:0;display:grid;gap:8px"><legend style="font-weight:500;margin-bottom:6px">Criteria met</legend><div id="criteria" style="display:grid;gap:8px"></div></fieldset>
+<div class="pk-two"><div><label for="pod">Pod code</label><input id="pod" inputmode="numeric" value="12"></div><div><label for="mentor">Mentor code</label><input id="mentor" inputmode="numeric" value="417"></div></div>
+</div></li>
+<li data-step="revision"><span class="pk-dot">5</span><div><h3>Mentor revision suggestion</h3><label class="pk-row"><input type="checkbox" id="rev"> <span>The mentor left at least one specific revision suggestion, and the learner responded to it.</span></label></div></li>
+<li data-step="facilitator"><span class="pk-dot">6</span><div><h3>Facilitator sign-off</h3><label class="pk-row"><input type="checkbox" id="fac"> <span>The pod’s named adult facilitator has seen the work and confirms this review.</span></label></div></li>
+</ol>
+<button type="button" class="btn pk-sign" id="sign-btn" disabled>Sign credential</button>
+</div>
+<div id="cert-area"><div class="pk-empty"><div><b>The certificate prints here</b><p class="pk-hint">Finish all six checks. The learner’s name is added by hand, never typed.</p></div></div></div>
+<template id="cert-empty"><div class="pk-empty"><div><b>The certificate prints here</b><p class="pk-hint">Finish all six checks. The learner’s name is added by hand, never typed.</p></div></div></template>
+</div></div>
+
+<div class="pk-panel" id="tab-verify" role="tabpanel" hidden><div class="pk-verify">
+<h2>Check a credential</h2>
+<p class="pk-hint">Scan the certificate’s QR code with any phone camera, then paste the text here. It starts with ARK2. No account and no internet needed.</p>
+<label for="code" style="margin:0">Credential code</label><textarea id="code" placeholder="ARK2.…"></textarea>
+<button type="button" class="btn" id="verify-btn" style="justify-self:start">Verify</button>
+<div id="verify-out" aria-live="polite"></div>
+<div id="vfile" hidden><div class="pk-drop" id="vdrop"><p><b>Check the shared files</b><br><span class="pk-hint">Drop the files the family shared. They’re compared in this browser, never uploaded.</span></p><button type="button" class="btn line">Choose files</button><input type="file" multiple hidden></div><div id="vfile-out" aria-live="polite"></div></div>
+</div></div>
+
+<div class="pk-panel" id="tab-keys" role="tabpanel" hidden><div id="keys-out"></div></div>
+<div class="pk-panel" id="tab-eth" role="tabpanel" hidden><div id="eth-out"></div></div>
+<p class="note">Read how this fits the pathway on the <a href="liberverse.html">LIBERVERSE page</a> and how ARK protects learners under <a href="safeguarding.html">safeguarding</a>.</p>
+</div></section></main>
+<div id="pk-toast" role="status" aria-live="polite" hidden></div>
+<footer><div class="wrap"><div class="fl"><a href="./">Home</a><a href="about.html">About Liberland</a><a href="curriculum.html">Curriculum</a><a href="liberverse.html">LIBERVERSE</a><a href="proof-kit.html">Proof Kit</a><a href="plans.html">Learning plans</a><a href="mentors.html">Mentors</a><a href="pricing.html">Pricing</a><a href="safeguarding.html">Safeguarding</a></div><p>Liberland Academy is a draft education programme. It is not an accredited school or qualification and not an official institution of the Liberland government. The Proof Kit is a prototype: it issues no tokens, collects no personal data and sends nothing anywhere unless you send an Ethereum transaction from your own wallet.</p></div></footer>
+<script type="module" src="proof-kit/app.js"></script></body></html>
