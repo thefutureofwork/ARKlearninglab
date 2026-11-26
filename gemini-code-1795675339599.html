@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LIBERVERSE V2 Portfolio &amp; Mentor Bounty Prototype | ARK Learning Lab</title>
+  <style>
+    :root {
+      --bg: #f9f8f4;
+      --surface: #ffffff;
+      --text: #1c2421;
+      --muted: #52605b;
+      --accent: #1f5c4d;
+      --accent-light: #e8f1ee;
+      --border: #d8dfd9;
+      --warn-bg: #fff8e6;
+      --warn-border: #e6c675;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .status-banner {
+      background: var(--warn-bg);
+      border: 1px solid var(--warn-border);
+      border-radius: 8px;
+      padding: 0.9rem 1.1rem;
+      font-size: 0.92rem;
+      margin-bottom: 2rem;
+    }
+
+    h1, h2, h3 { line-height: 1.25; margin-top: 0; }
+    h1 { font-size: 1.9rem; margin-bottom: 0.5rem; }
+    .subtitle { color: var(--muted); margin-bottom: 2rem; }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      font-size: 0.92rem;
+      margin-bottom: 0.35rem;
+    }
+
+    input[type="text"], select, textarea {
+      width: 100%;
+      padding: 0.65rem 0.8rem;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-size: 0.95rem;
+      font-family: inherit;
+      margin-bottom: 1rem;
+      background: #fff;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 0.7rem 1.2rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .btn:hover { opacity: 0.92; }
+
+    .btn-secondary {
+      background: var(--accent-light);
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      margin-left: 0.5rem;
+    }
+
+    .output-box {
+      background: #f2f5f3;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1rem;
+      margin-top: 1rem;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 0.85rem;
+      word-break: break-all;
+      display: none;
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--accent-light);
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 0.8rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      margin-bottom: 0.6rem;
+    }
+
+    .bounty-row {
+      border-top: 1px solid var(--border);
+      padding: 0.9rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .bounty-row:first-of-type { border-top: none; }
+    .meta { font-size: 0.88rem; color: var(--muted); }
+    footer {
+      margin-top: 2.5rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      padding-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <p><a href="index.html">&larr; Back to ARK Learning Lab</a></p>
+
+    <div class="status-banner">
+      <strong>Architectural Prototype (Draft):</strong> This interactive demo illustrates how LIBERVERSE capstone portfolios and mentor reviews could anchor to <strong>Liberland Blockchain V2</strong> and <strong>Liberland Merit (LLM)</strong>. All hashing happens locally in your browser; no student data is transmitted or stored on-chain.
+    </div>
+
+    <h1>LIBERVERSE V2 Portfolio &amp; Mentor Protocol</h1>
+    <p class="subtitle">
+      Privacy-preserving proof of learner work + merit-aligned technical mentorship.
+    </p>
+
+    <!-- STEP 1: CLIENT-SIDE PORTFOLIO HASHER -->
+    <section class="card">
+      <span class="badge">1 &middot; Verifiable Portfolio Attestation</span>
+      <h2>Generate a Privacy-Preserving Portfolio Fingerprint</h2>
+      <p>
+        Instead of uploading a minor's personal details or files onto a public blockchain, LIBERVERSE generates a local <strong>SHA-256 cryptographic hash</strong> of the learner's capstone summary or file. Only the fingerprint and mentor attestation are anchored to Liberland V2.
+      </p>
+
+      <label for="moduleSelect">LIBERVERSE Module / Capstone</label>
+      <select id="moduleSelect">
+        <option value="Module 1: Privacy & Threat Modeling">Module 1: Privacy &amp; Threat Modeling</option>
+        <option value="Module 2: Data Literacy & Evidence">Module 2: Data Literacy &amp; Evidence</option>
+        <option value="Module 3: Code & Open Protocols">Module 3: Code &amp; Open Protocols</option>
+        <option value="Module 4: AI Reasoning & Verification">Module 4: AI Reasoning &amp; Verification</option>
+        <option value="Module 5: City Design & Local Systems">Module 5: City Design &amp; Local Systems</option>
+        <option value="Module 6: Constitutional Governance">Module 6: Constitutional Governance</option>
+        <option value="4-Week LIBERVERSE Capstone" selected>4-Week LIBERVERSE Capstone</option>
+      </select>
+
+      <label for="artifactText">Capstone Summary, Evidence Notes, or Code Link (Processed Locally)</label>
+      <textarea id="artifactText" rows="3" placeholder="e.g., Danube Water Sensor Prototype v2 — measured turbidity across 4 points, revised filter housing after mentor review..."></textarea>
+
+      <label for="artifactFile">Optional: Select a Local Portfolio File (PDF, ZIP, Image, Code)</label>
+      <input type="file" id="artifactFile" />
+
+      <div style="margin-top: 0.75rem;">
+        <button class="btn" onclick="generateFingerprint()">Generate SHA-256 Attestation Proof</button>
+        <button class="btn btn-secondary" onclick="loadSample()">Load Sample Capstone</button>
+      </div>
+
+      <div id="hashOutput" class="output-box"></div>
+    </section>
+
+    <!-- STEP 2: MENTOR BOUNTY & LLM SIMULATION -->
+    <section class="card">
+      <span class="badge">2 &middot; Dual-Track Mentor Bounties (LLM + LLD)</span>
+      <h2>Illustrative Capstone Review Checkpoints</h2>
+      <p>
+        Vetted ecosystem builders earn <strong>LLD</strong> for structured rubric reviews and qualify for <strong>LLM</strong> civic-contribution allocations when learners successfully defend revised work.
+      </p>
+
+      <div class="bounty-row">
+        <div>
+          <strong>Checkpoint 1: Question &amp; System Map Review</strong>
+          <div class="meta">Requires 1 documented scope check &amp; safety review &bull; Pod Facilitator co-sign</div>
+        </div>
+        <div><strong>15 LLD</strong> + <em>Merit Log</em></div>
+      </div>
+
+      <div class="bounty-row">
+        <div>
+          <strong>Checkpoint 2: Prototype / Code &amp; Data Audit</strong>
+          <div class="meta">Requires 1 actionable revision note &amp; evidence-limit check</div>
+        </div>
+        <div><strong>25 LLD</strong> + <em>Merit Log</em></div>
+      </div>
+
+      <div class="bounty-row">
+        <div>
+          <strong>Checkpoint 3: Final Capstone Defense &amp; V2 Attestation</strong>
+          <div class="meta">Signs on-chain Soulbound credential hash upon learner pitch</div>
+        </div>
+        <div><strong>35 LLD</strong> + <em>LLM Nomination</em></div>
+      </div>
+    </section>
+
+    <footer>
+      ARK Learning Lab &middot; Draft enrichment programme in development (ages 6&ndash;18). Not an accredited school or official Liberland government institution. Enrolment and token integrations are pre-launch concepts.
+    </footer>
+  </div>
+
+  <script>
+    function loadSample() {
+      document.getElementById("moduleSelect").value = "4-Week LIBERVERSE Capstone";
+      document.getElementById("artifactText").value =
+        "Project: Low-Bandwidth Pod Governance & Water Ledger | Learner ID: Pseudonymous-Pod-04 | Evidence: 6-week Danube observation log, open-source Python tally script, and 1 recorded design revision after mentor feedback.";
+      generateFingerprint();
+    }
+
+    async function generateFingerprint() {
+      const moduleVal = document.getElementById("moduleSelect").value;
+      const textVal = document.getElementById("artifactText").value.trim();
+      const fileInput = document.getElementById("artifactFile");
+      const output = document.getElementById("hashOutput");
+
+      if (!textVal && (!fileInput.files || fileInput.files.length === 0)) {
+        alert("Enter a brief project note, select a file, or click 'Load Sample Capstone'.");
+        return;
+      }
+
+      const encoder = new TextEncoder();
+      let combinedBytes = encoder.encode(moduleVal + "::" + textVal);
+
+      if (fileInput.files && fileInput.files.length > 0) {
+        const fileBuffer = await fileInput.files[0].arrayBuffer();
+        const fileBytes = new Uint8Array(fileBuffer);
+        const merged = new Uint8Array(combinedBytes.length + fileBytes.length);
+        merged.set(combinedBytes);
+        merged.set(fileBytes, combinedBytes.length);
+        combinedBytes = merged;
+      }
+
+      const hashBuffer = await crypto.subtle.digest("SHA-256", combinedBytes);
+      const hashArray = Array.from(new Uint8Array(hashBuffer));
+      const hashHex = hashArray.map(b => b.toString(16).padStart(2, "0")).join("");
+      const timestamp = new Date().toISOString();
+
+      output.style.display = "block";
+      output.innerHTML =
+        "<strong>LIBERVERSE V2 Attestation Payload (Simulated)</strong><br><br>" +
+        "<strong>Track:</strong> " + moduleVal + "<br>" +
+        "<strong>Timestamp (UTC):</strong> " + timestamp + "<br>" +
+        "<strong>SHA-256 Portfolio Hash:</strong> 0x" + hashHex + "<br>" +
+        "<strong>Privacy Mode:</strong> Zero PII on-chain (hash + mentor signature only)<br>" +
+        "<strong>Target Registry:</strong> Liberland Blockchain V2 (Testnet Preview)";
+    }
+  </script>
+</body>
+</html>
