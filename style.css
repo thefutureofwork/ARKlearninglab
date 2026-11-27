@@ -40,3 +40,24 @@
 #format .format-grid .card .micro-label{margin:0;color:var(--river);font:500 14px/1.3 var(--mono);letter-spacing:.1em;text-transform:uppercase}
 @media(max-width:860px){#format .format-grid{grid-template-columns:1fr}#format .format-grid .card{min-height:0}}
 @media print{#format .format-grid{grid-template-columns:1fr!important}#format .format-grid .card,#format .format-grid .card h3,#format .format-grid .card p{color:#111!important}}
+/* Homepage review fixes, Fri 27 Nov 2026: sample-first hero, illustrative portfolio artifact, lighter provider note and visible keyboard focus. */
+.hero-status{margin:14px 0 0;font-size:18px;color:var(--ink)}.hero-status b{font-family:var(--display)}
+.sample{background:var(--paper)}.sample h2{max-width:900px}
+.sample-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:24px;margin-top:22px;align-items:start}
+.sample-steps{background:var(--sun);border-radius:8px;padding:22px 24px}.sample-steps .micro-label{color:var(--ink)}
+.sample-steps ol{counter-reset:s;list-style:none;margin:14px 0 0;padding:0;display:grid;gap:10px}
+.sample-steps li{counter-increment:s;position:relative;background:white;border-radius:6px;padding:12px 14px 12px 54px;font-size:17px;line-height:1.45}
+.sample-steps li::before{content:counter(s);position:absolute;left:14px;top:11px;width:28px;height:28px;border-radius:50%;background:var(--ink);color:var(--sun);display:grid;place-items:center;font:700 15px var(--display)}
+.sample-steps li b{font-family:var(--display)}
+.artifact{margin:0;background:white;border:2px solid var(--ink);border-radius:8px;padding:18px 20px}
+.artifact-tag{display:inline-block;margin:0;padding:4px 10px;border:2px dashed var(--river);border-radius:4px;font:500 14px/1.3 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--river)}
+.artifact-sheet{margin-top:14px;padding:16px;border-radius:6px;background:var(--paper);background-image:repeating-linear-gradient(transparent 0 31px,oklch(.86 .015 95) 31px 32px)}
+.artifact-field{margin:0 0 12px;font-size:17px;line-height:1.45;max-width:none}.artifact-field b{display:block;font:500 13px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--river)}
+.artifact-chart{display:block;width:100%;height:auto;margin:4px 0 12px;background:white;border:1px solid var(--rule);border-radius:4px}
+.artifact figcaption{margin-top:12px;font-size:16px;color:var(--ink-2)}
+.provider-note{display:grid;grid-template-columns:200px minmax(0,1fr);gap:24px;align-items:center;margin-top:26px;padding:20px 24px;background:white;border:1px solid var(--rule);border-left:7px solid var(--river);border-radius:8px;max-width:980px}
+.provider-note img{display:block;width:100%;height:auto}.provider-note h2{font-size:clamp(22px,2.6vw,27px);margin:6px 0 8px}.provider-note p{margin:6px 0 0;font-size:17px}.provider-links a{font-weight:600}
+.river-stop a:focus-visible circle{stroke:var(--river);stroke-width:7;fill:var(--paper)}
+.bandbtn:focus-visible,.river-mobile a:focus-visible,footer a:focus-visible,.where a:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
+.bandbtn:focus-visible{outline-color:var(--river)}
+@media(max-width:860px){.sample-grid{grid-template-columns:1fr}.provider-note{grid-template-columns:1fr;gap:12px}.provider-note img{max-width:180px}}
