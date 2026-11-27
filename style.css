@@ -61,3 +61,7 @@
 .bandbtn:focus-visible,.river-mobile a:focus-visible,footer a:focus-visible,.where a:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
 .bandbtn:focus-visible{outline-color:var(--river)}
 @media(max-width:860px){.sample-grid{grid-template-columns:1fr}.provider-note{grid-template-columns:1fr;gap:12px}.provider-note img{max-width:180px}}
+/* ARK logo in the header, Fri 27 Nov 2026: approved yellow-and-black lockup on a paper tile so the yellow notch and brackets stay visible on the yellow header. The link text stays for screen readers. */
+nav .brand{font-size:0;line-height:0;color:transparent;width:172px;height:84px;padding:0;background:var(--paper) url(ark-logo.svg) center/144px auto no-repeat;border-radius:6px}
+@media(max-width:560px){nav .brand{width:140px;height:68px;background-size:116px auto}}
+@media print{nav .brand{display:none}}
