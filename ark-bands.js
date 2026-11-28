@@ -43,3 +43,28 @@ window.ARK = {
     '15-18':['A problem statement and a systems map','An analysis that states its uncertainty','A tool, model or policy draft','Panel questions and my revisions','A defended recommendation and a note on its limits']
   }
 };
+
+/* The portfolio is the record; the separate Proof Kit checks its signed certificate. */
+(function () {
+  const proofText = 'The Proof Kit is a sample-work demo for making and checking a signed project certificate. It can check the signature and, if you choose to share the files, whether they match what was signed. It doesn’t upload the files, grade the work or prove who made it.';
+  const more = () => {
+    const link = document.createElement('a');
+    link.href = 'proof-kit.html#how-it-works';
+    link.textContent = 'See how the Proof Kit works';
+    return link;
+  };
+  const home = document.getElementById('portfolio');
+  if (home) {
+    const intro = Array.from(home.querySelectorAll('p')).find(p => p.textContent.startsWith('A finished five-piece portfolio'));
+    if (intro) intro.replaceChildren('A finished five-piece portfolio earns a printable certificate for that age band. Learners never get crypto, tokens or Liberland Merits. ' + proofText + ' ', more(), '.');
+    const faq = Array.from(document.querySelectorAll('summary')).find(s => s.textContent.trim() === 'What is the Proof Kit?');
+    if (faq && faq.nextElementSibling) faq.nextElementSibling.replaceChildren(proofText + ' ', more(), '.');
+  } else if (document.getElementById('cert-wrap')) {
+    const hero = document.querySelector('header .hero');
+    if (!hero) return;
+    const p = document.createElement('p');
+    p.className = 'noprint';
+    p.append('The portfolio builder records what you made. ' + proofText + ' ', more(), '.');
+    hero.append(p);
+  }
+})();
